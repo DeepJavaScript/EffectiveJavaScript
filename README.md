@@ -6,6 +6,13 @@ deepJS 讀書會的其中一本書。
 
 會以中文版為主要更新內容
 
+## 原版資訊
+
+- [英文原文官網](http://effectivejs.com/)
+- [原文戡誤表](https://github.com/effectivejs/site/wiki/Errata)
+
+------ 聚會進度 ------
+
 ## Chapter 1: Accustoming Yourself to JavaScript
 
 - [Item 01: Know Which JavaScript You Are Using](Chapter%201%3A%20Accustoming%20Yourself%20to%20JavaScript/Item%2001%3A%20Know%20Which%20JavaScript%20You%20Are%20Using.md)
