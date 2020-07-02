@@ -34,6 +34,7 @@ ES5 支援, 設計成這樣是為了向上相容性，在舊版沒有副作用�
 - 永不串接 strict 檔案與 nonstrict 檔案。
 - 將它們包在 `function` 內 (不同的`scop`)
 
+<<<<<<< HEAD
 ### 條款 01 知道你所用的是哪個 JavaScript
 #### JavaScript 脈絡
 - 該語言的標準為 ECMAScript，由各家瀏覽器實作 Javascript 引擎。各家對標準的支援程度有異：
@@ -71,3 +72,38 @@ function foo () {
     nonstrict2();
 })();
 ```
+=======
+- 從ES5開始，新增了嚴格模式（strict mode）。
+- 嚴格模式支持向上兼容，因此，ES5以前的版本(不支援嚴格模式)"strict mode"後面的程式碼依然可以執行。
+- "strict mode"指令必須被放在一段程式碼的最上方，或者一個函式的頂端，才有作用。
+
+以上這些規則會在合併JS檔案時造成一些問題，假如有些JS程式碼是嚴格模式，有些不是，合併或許會導致一些問題，所以盡量不要合併嚴格模式的JS檔案和非嚴格模式的JS檔案。
+
+解決方法：用IIFE包住每個JS檔案的內容
+```
+// no strict-mode directive
+(function() {
+	// file1.js
+	"use strict";
+	function f() {
+		// ...
+	}
+	// ...
+})();
+(function() {
+	// file2.js
+	// no strict-mode
+	function f() {
+		var arguments = [];
+		// ...
+	}
+	// ...
+```
+
+
+重點
+1. 決定你的應用程式支持 JavaScript 的哪些版本。
+2. 確保你使用的任何 JavaScript 的特性對於應用程式要運行的所有環境都是支持的。
+3. 總是在執行嚴格模式檢查的環境中測試嚴謹的程式碼
+4. 注意在合併JS程式碼時是否在同樣嚴格模式底下
+>>>>>>> bcff1f0f655eb24719913aee8bf60f676426e7db

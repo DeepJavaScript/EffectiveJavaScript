@@ -27,7 +27,7 @@
 |Function Statement|-|用來呼叫 & 遞迴|
 |Function Expression|用來呼叫~[下面的例子]~|用來遞迴|
 
-```javascript=
+```javascript
 var f = function double(x) { return x * 2; }
 f()      // ƒ double(x) { return x * 2; }
 double()
@@ -44,7 +44,7 @@ Uncaught ReferenceError: double is not defined
 
 以下是 ES3 才會出現的情況
 
-```javascript=
+```javascript
 var constructor = function () { return null; }
 var f = function f () {
     return constructor();
@@ -60,7 +60,7 @@ var f = function f () {
 
 2. 過去，會把具名函式當作宣告來 `hoist`  (現在不會了)
 
-```javascript=
+```javascript
 var f = function g() { return 17; };
 ```
 ```
