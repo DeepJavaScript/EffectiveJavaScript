@@ -20,13 +20,13 @@ JavaScript會強制加入分號!!
         - `while(true)  //error`
         - `while(true); // ok
 
-```javascript=
+```javascript
 a = b
 var a
 (f())
 ```
 
-```javascript=
+```javascript
 var a
 a = b  //不插入分號: b is not a function 
 (f())
@@ -37,12 +37,91 @@ a = b  //不插入分號: b is not a function
 兩個語彙間，不允許 newline 的存在。
 `return`, `throw`, 明確的`label`的`break`或`continue`, 後綴的`++`或`--`。
 
-```javascript=
+```javascript
 return {};
 ```
 
-```javascript=
+```javascript
 return
 {}
 ;
 ```
+
+### 條款 06 了解分號插入的限制
+JavaScript 的分號錯誤修正機制：
+#### 分號會插入在：
+- `}` 之前
+    ```javascript
+    function foo() {return true}
+    function foo() {return true;}
+    ```
+- 一行的尾端
+    ```javascript
+    function foo(x) { 
+        return a + x
+    }
+
+    function foo(x) { 
+        return a + x;
+    }
+    ```
+- 一個程式的結尾
+    :question: 這邊不懂
+- `return`、`throw` 的後換行
+    ```javascripte=
+    function foo() {
+        return
+        {}
+    }
+    function foo() {
+        return;
+        {}
+    }
+    ```
+- `break` 跟 `continue` 的後換行
+    ```javascript
+    for(let i=0 ; i++ ; i<3) {
+        if(i === 2) {
+            break
+        }
+    }
+    for(let i=0 ; i++ ; i<3) {
+        if(i === 2) {
+            break;
+        }
+    }
+    ```
+- `++` 跟 `--` 後綴運算子的前換行
+    ```javascript
+    a
+    ++
+    
+    a;
+    ++
+    ```
+#### 注意，分號不會插入在：
+- `for 的條件式`
+    ```javascript
+    for(
+        let i    // 不會插入分號
+        i++      // 不會插入分號
+        i<3      // 不會插入分號
+    ){
+        return i * 2;
+    }
+    ```
+- `while` 的條件式
+    ```javascript
+    while(true)   // 不會加入分號
+    ```
+#### 注意 `(` `[` `+` `-` `/` 
+`(` `[` `+` `-` `/` 可能被解析為上一行的後續程式碼，所以要在以這些符號開頭的述句前加上分號：
+
+```javascript
+a + b
+(function(){})()
+
+// 會被解析成
+a + b(function(){})()
+```
+> [Automatic Semicolon Insertion | read262](https://read262.netlify.app/ecmascript-language-lexical-grammar/automatic-semicolon-insertion#sec-rules-of-automatic-semicolon-insertion)
