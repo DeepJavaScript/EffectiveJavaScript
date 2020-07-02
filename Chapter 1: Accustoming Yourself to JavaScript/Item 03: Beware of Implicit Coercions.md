@@ -160,7 +160,7 @@ function position(x) {
 x = position(0);  // 0
 x = position();   // 320
 ```
-<<<<<<< HEAD
+
 ### 條款 03 小心隱含的強制轉型（Implicit Coercions）
 #### 強制轉型須知
 - `+` 運算子運算特性：
@@ -264,7 +264,7 @@ isUndefined(null);        // false
 ```
 > 使用 `x === undefined` 也可以。
 > 
-=======
+
 ```javascript
 "J" + { toString: function() { return "s"; } }; // "JS"
 2 * { valueOf: function(){ return 3; } }; // 6
@@ -303,5 +303,194 @@ function point(x = 320, y = 240) {
   return { x, y };
 }
 ```
-:::
->>>>>>> 611fd29551b24037ca8159a7f72a752d586cb9e0
+
+
+
+整理：
+- 在 JS 若用錯誤的型別做奇怪的事 (比較、算術運算...等)，可能會發生預期外的事，因為被隱含的強制轉型了
+- `+` 運算子經 overload，會依 arg 型別來決定要加法運算還是字串串接
+- 物件藉由 `valueOf()` 來強制轉型成 number，而藉由 `toString()` 來強制轉型成 string
+- 具有 `valueOf()` 的物件所實作的 `toString()` 應提供 `valueOf()` 產生的值的物件表示值
+- 建議用 `typeof` 或比較的方式來找出 `undefined`，而非用 truthiness 來測試未定義的值 (即 `undefined` )
+
+## `+` 運算子
+
+`+` 運算子 overload 數字加法或字串串接，但會依 arg 的型別來決定要怎麼處理
+- number + number：數字運算
+- string + string：字串串接
+- number + string：將 number 強制轉型成 string 後，進行字串串接
+
+```javascript
+2 + 3;  // 5
+"hello" + " world";  // "hello world"
+
+"2" + 3;  // "23"
+2 + "3";  // "23"
+```
+
+`+` 運算子是從左到右 (即左結合，left-associative)：
+
+```javascript
+1 + 2 + "3";    // "33"
+(1 + 2) + "3";  // "33"
+
+1 + "2" + 3;    // "123"
+(1 + "2") + 3;  // "123"
+```
+
+## 有時方便的強制轉型
+
+可用來自動轉換使用者輸入、文字檔或網路 stream 的字串：
+
+```javascript
+"17" * 3;   // 51
+"8" | "1";  // 9
+```
+
+## 看視奇怪的強制轉型
+
+算術運算：
+- `null`：被轉成 `0`
+- `undefined`：被轉成特殊的浮點數 `NaN`
+
+## 是否為 `NaN`
+
+- `NaN` 不等於自己，所以不能用 `===` 判斷
+  - 可用「不等於自己」這個特性來檢查 `NaN`
+- 可用 `isNaN()` 判斷某 number 型別的值是否為 `NaN`
+  - 但不能判斷不是 number 型別的值，因為這些值都會被轉成 number 型別
+
+```javascript
+var x = NaN;
+x === NaN;   // false
+
+// 書中提供的
+function isReallyNaN(x) {
+  return x !== x;
+}
+```
+
+```javascript
+isNaN(NaN);                 // true
+
+isNaN("foo");               // true
+isNaN(undefined);           // true
+isNaN({});                  // true
+isNaN({ valueOf: "foo" });  // true
+```
+
+補充：
+- 在 ES6 前，只能用 `isNaN()` 判斷，但會有上面提到的雷，所以才使用 `!==` 來實作一個真正判斷是否為 `NaN` 的功能
+- 在 ES6 提供 `Number.isNaN()` 就不需要用 `isNaN()` 了 (注意，兩個是不同的)
+
+若想在不支援 `Number.isNaN()` 的環境使用它，可用 [polyfill](https://github.com/zloirock/core-js/blob/master/packages/core-js/modules/es.number.is-nan.js) (此連結為 core-js 提供的 polyfill，Babel 就是使用 core-js)：
+
+```javascript
+Number.isNaN = Number.isNaN || function (value) {     
+  return value !== value;
+}
+```
+
+## 物件的強制轉型
+
+```javascript
+"the Math object: " + Math;  // "the Math object: [object Math]"
+"the JSON object: " + JSON;  // "the JSON object: [object JSON]"
+
+Math.toString();  // "[object Math]"
+JSON.toString();  // "[object JSON]"
+
+"J" + { toString: () => "S" }; // "JS"
+2 * { valueOf: () => 3 };      // 6
+```
+
+物件用 `+` 運算子時，會執行 `valueOf()`。若 `valueOf()` 的回傳值為 number：
+- `+` 的另一個 arg 是 string 時，會將回傳值 number 轉成 string，最後進行字串串接
+- `+` 的另一個 arg 是 number 時，會直接進行數字加法運算
+
+```javascript
+var obj = {
+  toString: () => "[object MyObject]",
+  valueOf: () => 17
+};
+
+"object: " + obj; // "object: 17"
+1 + obj;          // 18
+```
+
+註：`valueOf()` 是用來表達數值的物件所設計的，例如：`Number` 物件。這些物件的 `toString()` 和 `valueOf()` 會回傳一致的結果：同一個數字的字串表示值 (string representation) 或數字表示值 (numeric representation)，這樣 overload 的 `+` 才會有一致的行為，例如：
+
+```javascript
+var n = Number(1);
+n + 1;    // 2
+n + '1';  // '11'
+```
+
+一般來說，強制轉型成 string 比強制轉型成 number 還少見，用處也比較小。
+
+除非你的物件是用來表示數值的，否則最好不要有 `valueOf()`，而 `obj.toString()` 應要產生 `obj.valueOf()` 的字串表示值。
+
+## boolean 的強制轉型 (truthiness，作為真假值)
+
+相關的：
+- `if`
+- `||`、`&&` 運算子
+
+補充：
+spec 提到的 ToBoolean(argument) 會強制轉型成 `boolean` 型別：
+- `undefined` 和 `null` 會轉成 `false`
+- `boolean` 不會轉換
+- `number` 時：
+  - `+0`、`-0` 或 `NaN` 會轉成 `false`
+  - 否則會轉成 `true`
+- `string` 時：
+  - `""` 空字串 (length 為 0) 會轉成 `false`
+  - 否則會轉成 `true`
+- `object` 會轉成 `true`
+
+非 spec 的說法就是分成 truthy 和 falsy：
+- falsy 的值：被強制轉型為 `boolean` 時會變成 `false` 值，例如：
+  - `undefined`、`null`
+  - `false`
+  - `+0`、`-0`、`NaN`
+  - `""`
+- truthy 的值：falsy 的值之外的其他值被強制轉型為 `boolean` 時會變成 `true` 值，例如：
+  - `true`
+  - 除了 `+0`、`-0`、`NaN` 之外的 `number`
+  - 除了 `""` 的 `string`
+  - 所有 `object`
+
+若使用 truthiness 來檢查函數的 arg 或物件 property 是否有定義時，可能會不安全。
+
+例如：不輸入 arg 時會設定預設值，但設定 `point(0, 0)` 時，`x` 和 `y` 應為 `0`：
+
+```javascript
+function point(x, y) {
+  if (!x) x = 320;
+  if (!y) y = 240;
+  return { x, y };
+}
+
+point();      // { x: 320, y: 240 }
+point(0, 0);  // { x: 320, y: 240 }
+```
+
+所以應該改為：
+
+```javascript
+function point(x, y) {
+  if (x === undefined) x = 320;
+  if (y === undefined) y = 240;
+  return { x, y };
+}
+
+// 或
+function point(x, y) {
+  if (typeof x === "undefined") x = 320;
+  if (typeof y === "undefined") y = 240;
+  return { x, y };
+}
+
+point();      // { x: 320, y: 240 }
+point(0, 0);  // { x: 320, y: 240 }
+```

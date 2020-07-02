@@ -125,3 +125,249 @@ a + b
 a + b(function(){})()
 ```
 > [Automatic Semicolon Insertion | read262](https://read262.netlify.app/ecmascript-language-lexical-grammar/automatic-semicolon-insertion#sec-rules-of-automatic-semicolon-insertion)
+不加分號要記太多規則了，所以一定要加分號！
+
+## 規則
+
+會自動插入分號 (所以可省略分號)：
+- 一個 `}` token 之前 (即區塊的結尾)
+- 一個或多個 newlines (換行) 之後 (即一行的結尾)
+- 在程式輸入 (program input) 的結尾
+- 在下一個 input token 無法被解析時，才會插入分號
+
+不會自動插入分號：
+- `(`、`[`、`+`、`-` 和 `/` 可能會被當作 expression operator 或陳述句的前綴，視 context 而定
+  - 因此要注意以運算式為結尾的陳述句，例如：賦值陳述句
+- `for` 迴圈的 header 內，以及 empty statement 一定要自己加分號
+  - 否則會解析錯誤
+
+## restricted productions
+
+以下是 Spec 對 restricted productions (受限的產生規則) 的建議：
+- 後綴 `++` 或 `--` 運算子 (例如：`a++` )：
+  - 應與運算元在同一行
+- `break` 或 `continue` 陳述句中的 label identifier：
+  - 應與 `break` 或 `continue` token 在同一行
+- `return` 或 `throw` 陳述句中的運算式：
+  - 應與 `return` 和 `throw` token 在同一行
+- `yield` 表達式中的賦值運算式：
+  - 應與 `yield` token 在同一行
+
+若沒有按照 restricted productions 的建議做 (即在這些 token 之前加上 newline)，就會在以下這些位置自動插入分號：
+- 在 `++` 或 `--` token 之前
+- 在 `continue`、`break`、`return`、`throw` 或 `yield` token 之後
+
+> 可參閱 spec 對「[Automatic Semicolon Insertion](https://read262.netlify.app/ecmascript-language-lexical-grammar/automatic-semicolon-insertion)」的定義。
+
+補充：
+書中提到下面爛例不應使用 truthiness 測試來初始化 `x` 和 `y` 欄位 (違反條款 42 建議的)：
+
+```javascript
+function Point(x, y) {
+  this.x = x || 0
+  this.y = y || 0
+}
+```
+
+其實可用 TC39 提案的 [Nullish Coalescing](https://github.com/tc39/proposal-nullish-coalescing) 來解決：
+
+```javascript
+function Point(x, y) {
+  this.x = x ?? 0;
+  this.y = y ?? 0;
+}
+```
+
+規則：
+1. 分號只會被插入在以下位置：
+    - 一個 `}` token 之前
+    - 一個或多個 newlines (換行) 之後
+    - 在程式輸入 (program input) 的結尾
+
+即只能在一行的結尾、區塊的結尾，或是程式的結尾省略分號，所以下面是合法的函數：
+
+```javascript
+function square(x) {
+  var n = +x
+  return n * n
+}
+function area(r) { r = +r; return Math.PI * r * r }
+function add1(x) { return x + 1 }
+```
+
+下面是不合法的：
+
+```javascript
+function area(r) { r = +r return Math.PI * r * r } // error
+```
+
+
+2. 只在下一個 input token 無法被解析時，才會插入分號
+    - `(`、`[`、`+`、`-` 和 `/` 可能會被當作 expression operator 或陳述句的前綴、視 context 而定
+      - 因此要注意以運算式為結尾的陳述句，例如：賦值陳述句
+
+即分號插入是一種錯誤更正的機制。
+
+例如：下面會被正確地解析成單一陳述句
+
+```javascript
+a = b
+(f());
+
+// 解析後：
+a = b(f());
+```
+
+```javascript
+var b = a => a + 1;
+var f = () => 20;
+
+a = b
+(f());
+console.log(a);  // 21
+```
+
+例如：會被解析成兩個個別的陳述句，因為下面會被解析錯誤
+
+```javascript
+a = b
+f();
+
+// 解析後：
+a = b f();
+```
+
+但我在 Chrome 執行不會解析錯誤，可以跑：
+
+```javascript
+var b = a => a + 1;
+var f = () => { console.log('fn') };
+
+a = b
+f(); // fn
+console.log(a);  // a => a + 1
+```
+
+解析後很像這樣：
+
+```javascript
+a = b;
+f();
+```
+
+例如：看起來很像兩個陳述句：賦值陳述句、呼叫陣列的 `map()` 的陳述句。但因為是以 `[` 為開頭，所以會被解析成一個陳述句：
+
+```javascript
+a = b
+["r", "g", "b"].map(v => v * 2);
+
+// 解析後：
+a = b["r", "g", "b"].map(v => v * 2);
+```
+
+而中括號內的 `"r", "g", "b"`，是以逗號分隔的運算式，JS 會從左邊開始往又求值 (evaluate)，並回傳最後一個子運算式 (subexpression) 的值，也就是 `"b"`，所以其實是存取 `b['b']`，並呼叫 `map()`：
+
+```javascript
+var b = { b: [1, 2] };
+
+a = b
+["r", "g", "b"].map(v => v * 2);
+console.log(a);  // [2, 4]
+```
+
+若在 regex 的前面接著沒有以分號為結尾的賦值陳述句，原本 regex 的 `/` 就會變成除法運算子：
+
+```javascript
+a = b
+/Error/i.test(str) && fail();
+
+// 解析後：
+a = b / Error / i.test(str) && fail();
+```
+
+另一個範例：原本的 code 像這樣
+
+```javascript
+a = b  // 插入分號
+var x  // 插入分號
+(f())  // 插入分號
+```
+
+若重構成這樣會出錯：
+
+```javascript
+var x  // 插入分號
+a = b  // 不插入分號
+(f())  // 插入分號
+
+// 解析後：
+var x;
+a = b(f());
+```
+
+另一個範例：IIFE：
+
+```javascript
+(function() {
+  // ...
+})()
+(function() {
+  // ...
+})()
+
+// 解析後：
+(function() {
+  // ...
+})()(function() {
+  // ...
+})();
+
+// 解法：
+
+;(function() {
+  // ...
+})()
+;(function() {
+  // ...
+})()
+```
+
+restricted productions (受限的產生規則) 的範例：會被解析成不帶 arg 的 `return`，後面接著 empty block，以及 empty statement：
+
+```javascript
+return
+{ };
+
+// 解析後：
+return;
+{ }
+;
+```
+
+3. 分號永遠不會被插入至一個 `for` 迴圈的 header 裡面作為分隔符號，或是插入作為一個 empty statement
+
+`for` 迴圈的 header 中，要明確的加上分號，否則會解析錯誤：
+
+```javascript
+for (var i = 0, total = 1  // parse error
+    i < n
+    i++) {
+  total += i
+}
+
+// 需改成：
+for (var i = 0, total = 1;
+    i < n;
+    i++) {
+  total += i;
+}
+```
+
+empty statement (例如：empty body) 也要明確的加上分號：
+
+```javascript
+function infiniteLoop() { while (true) } // parse error
+
+// 需改成：
+function infiniteLoop() { while (true); }
+```

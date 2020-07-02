@@ -30,3 +30,61 @@ name2.toUpperCase(); //'LEON'
 ```javascript
 name2.setProperty = '42';
 name2.setProperty();  //TypeError
+
+整理：
+- 進行相等性比較時，物件 wrapper 和基本型別值的行為不同
+- 取用或設定基本型別上的 property 時，會隱含地建立物件 wrapper
+
+## 物件 wrapper 相等性比較
+
+用物件 wrapper 建立的值和基本型別值 (primitive value) 還是不同，雖然在使用上很像。
+
+例如：利用 `String()` 字串 wrapper 來建立字串 vs 字串 literal：
+
+```javascript
+var s = new String("hello");
+
+s + " world";    // "hello world"
+s[4];            // "o"
+```
+
+- `String()` 是物件
+- 字串 literal 是字串
+
+```javascript
+typeof "hello";  // "string"
+typeof s;        // "object"
+```
+
+所以無法比較 wrapper (物件會比較參考是否相同)：
+
+```javascript
+var s1 = new String("hello");
+var s2 = new String("hello");
+s1 === s2;  // false
+s1 == s2;   // false
+```
+
+## 隱含地建立物件 wrapper
+
+物件 wrapper 看視沒用，但它的用處在於它的 utility method。
+
+當你要用那些 utility method 時，JS 會很像是用物件 wrapper 將基本型別值包起來，然後就能夠擷取出基本型別值的 property 來呼叫這些方法。
+
+例如：
+
+```javascript
+"hello".toUpperCase(); // "HELLO"
+```
+
+所以你能在基本型別值上設定 property，但不會有效果：
+
+```javascript
+var s = "hello";
+s.someProperty = 17;
+s.someProperty;  // undefined
+```
+
+因為每次隱含的 wrap 動作會產生新的 `String` 物件。
+
+註：在基本型別值上設定 property 超沒意義的...
