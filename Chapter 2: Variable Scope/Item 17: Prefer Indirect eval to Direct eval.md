@@ -12,7 +12,7 @@ eval 可以存取它被**呼叫**之處的 scope
 不會存取到任何的 local scope
 改到 global
 
-```javascript=
+```javascript
 var y = "global"; 
 function test(src) {
     var f = eval
@@ -27,7 +27,7 @@ console.log(test("var z = 'local';")); // "local"
 
 改到 global
 
-```javascript=
+```javascript
 var y = "global"; 
 function test(src) {
     (0, eval)(src);

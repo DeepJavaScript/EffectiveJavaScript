@@ -2,7 +2,7 @@
 
 JavaScript 對於錯誤型別的容忍度，可以說是大到令人驚訝
  
-```javascript=
+```javascript
 3 + true
 ```
 
@@ -11,7 +11,7 @@ JavaScript 對於錯誤型別的容忍度，可以說是大到令人驚訝
 動態型別語言，能夠執行，不過某些語言會拋出例外。
 JavaScript 會執行，並且產生結果 `4`
 
-```javascript=
+```javascript
 "hello"(1)
 null.x
 ```
@@ -23,7 +23,7 @@ null.x
 
 加法，可以各別算文字、數字
 
-```javascript=
+```javascript
 2 + 3 // 5
 "hello" + " world"  //hello world
 ```
@@ -31,14 +31,14 @@ null.x
 加法，可以混合運算文字和數字
 JS會偏好文字，將數字轉文字。
 
-```javascript=
+```javascript
 "2" + 3 //"23"
 2 + "3" //"23"
 ```
 
 加法，運算順序 `left-associative`
 
-```javascript=
+```javascript
 1 + 2 + "3" // "33"
 1 + "2" + 3 // "123" 
 ```
@@ -47,7 +47,7 @@ JS會偏好文字，將數字轉文字。
 
 偏好數字 
 
-```javascript=
+```javascript
 "17" * 3 //51
 ```
 
@@ -59,7 +59,7 @@ JS會偏好文字，將數字轉文字。
 
 不只是轉成數字，而是轉成「32位元整數的數字子集」
 
-```javascript=
+```javascript
 "8" | "1" // 9
 ```
 
@@ -67,7 +67,7 @@ JS會偏好文字，將數字轉文字。
 
 `null` 運算中，默默轉成 `0`
 
-```javascript=
+```javascript
 null + 32 // 32
 null * 32 // 0
 ```
@@ -78,7 +78,7 @@ null * 32 // 0
 
 因為 JavaScript 是依循令人困惑的 IEEE 754 標準。要求 NaN 不等同於它自己。
 
-```javascript=
+```javascript
 NaN === NaN // false
 ```
 
@@ -90,7 +90,7 @@ NaN === NaN // false
 
 如果你已知的值是一個數字，可以用`isNaN`來測試
 
-```javascript=
+```javascript
 isNaN(NaN)                // true
 isNaN("foo")              // true
 isNaN(undefined)          // true
@@ -100,7 +100,7 @@ isNaN({ valueOf: "foo"})  // true
 
 ES5 相對準的測試方法
 
-```javascript=
+```javascript
 NaN !== NaN                           // true
 "foo" !== "foo"                       // false
 undefined !== undefined               // false
@@ -110,7 +110,7 @@ undefined !== undefined               // false
 
 ES6
 
-```javascript=
+```javascript
 Number.isNaN(NaN)                // true
 Number.isNaN("foo")              // false
 Number.isNaN(undefined)          // false
@@ -141,7 +141,7 @@ Number.isNaN({ valueOf: "foo"})  // false
 
 不要靠 隱含轉型成 `boolean` 
 
-```javascript=
+```javascript
 function position(x) {
     if (!x)
         x = 320;
@@ -151,7 +151,7 @@ x = position(0);  // 320
 x = position();   // 320
 ```
 改成這樣，可以分辨 `0` 和 `undefined`
-```javascript=
+```javascript
 function position(x) {
     if (typeof (x) === "undefined")
         x = 320;

@@ -5,7 +5,7 @@
 1. function name 也擁有 hoisting 
 2. "use strict"; 以 block-scope 為主
 
-```javascript=
+```javascript
 function f() { return "global"; } 
 
 function test(x) {
@@ -24,7 +24,7 @@ test(true); // ["local", "local"]
 test(false); // ["local"]
 
 
-```javascript=
+```javascript
 function f() { return "global"; } 
 
 function test(x) {

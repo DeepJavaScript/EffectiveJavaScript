@@ -1,6 +1,6 @@
 # 條款 16 避免使用 eval 來建立區域變數
 
-```javascript=
+```javascript
 var y = "global"; 
 function test(src) {
     eval(src);
@@ -14,7 +14,7 @@ console.log(test("var z = 'local';")); // "global"
 
 要用，要給 scope
 
-```javascript=
+```javascript
 var y = "global"; 
 function test(src) {
     (() => eval(src))();  // eval 執行在自己的 local scope

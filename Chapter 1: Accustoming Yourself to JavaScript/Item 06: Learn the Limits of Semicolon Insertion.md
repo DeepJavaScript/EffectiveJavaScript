@@ -20,13 +20,13 @@ JavaScript會強制加入分號!!
         - `while(true)  //error`
         - `while(true); // ok
 
-```javascript=
+```javascript
 a = b
 var a
 (f())
 ```
 
-```javascript=
+```javascript
 var a
 a = b  //不插入分號: b is not a function 
 (f())
@@ -37,11 +37,11 @@ a = b  //不插入分號: b is not a function
 兩個語彙間，不允許 newline 的存在。
 `return`, `throw`, 明確的`label`的`break`或`continue`, 後綴的`++`或`--`。
 
-```javascript=
+```javascript
 return {};
 ```
 
-```javascript=
+```javascript
 return
 {}
 ;

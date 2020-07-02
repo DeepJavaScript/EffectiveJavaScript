@@ -14,12 +14,12 @@
 
 小心版本差異與標準版，才能在所有的瀏覽器上表現出一致的行為
 
-```javascript=
+```javascript
 const pi = 3.14;
 ```
 ES5 不支援, ES6支援
 
-```javascript=
+```javascript
 function f() {
     "use strict";
     var arguments = []; //Uncaught SyntaxError: Unexpected eval or arguments in strict mode 
