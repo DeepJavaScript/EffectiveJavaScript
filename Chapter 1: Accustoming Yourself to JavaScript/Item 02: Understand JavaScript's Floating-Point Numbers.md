@@ -5,6 +5,7 @@ JavaScript，只有一種: `number`，包含了`integers`和`floating-point numb
 
 事實上 JavaScript 中所有的數字都是 `double-precision floating-point` [IEEE 754](https://zh.wikipedia.org/wiki/IEEE_754) 的 64位元數字
 
+<<<<<<< HEAD
 ### 條款 02 了解 Javascript 的浮點數字
 #### Javascript 的數字特性
 - 用 `typeof` 檢查，整數與浮點數都是同一個 number 型別。
@@ -28,3 +29,6 @@ JavaScript，只有一種: `number`，包含了`integers`和`floating-point numb
     const caryOver = 10;
 
     (0.1 * caryOver + 0.2 * caryOver)/caryOver === 0.3 //true
+=======
+- bitwise不理解
+>>>>>>> 611fd29551b24037ca8159a7f72a752d586cb9e0

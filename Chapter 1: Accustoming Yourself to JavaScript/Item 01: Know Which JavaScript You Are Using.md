@@ -35,6 +35,7 @@ ES5 支援, 設計成這樣是為了向上相容性，在舊版沒有副作用�
 - 將它們包在 `function` 內 (不同的`scop`)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### 條款 01 知道你所用的是哪個 JavaScript
 #### JavaScript 脈絡
 - 該語言的標準為 ECMAScript，由各家瀏覽器實作 Javascript 引擎。各家對標準的支援程度有異：
@@ -73,6 +74,11 @@ function foo () {
 })();
 ```
 =======
+=======
+-  考量程式碼兼容性，最好的方式是將程式碼封裝並於每一個封裝的函式中設定嚴格模式(模組化管理)。
+  -  IIFE + strict mode
+  -  export, import(內建 strict mode)
+>>>>>>> 611fd29551b24037ca8159a7f72a752d586cb9e0
 - 從ES5開始，新增了嚴格模式（strict mode）。
 - 嚴格模式支持向上兼容，因此，ES5以前的版本(不支援嚴格模式)"strict mode"後面的程式碼依然可以執行。
 - "strict mode"指令必須被放在一段程式碼的最上方，或者一個函式的頂端，才有作用。
