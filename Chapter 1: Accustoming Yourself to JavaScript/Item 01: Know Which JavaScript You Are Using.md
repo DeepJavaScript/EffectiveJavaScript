@@ -84,10 +84,9 @@ function f(x) {
 
 ## 重點整理
 1. 決定你的應用程式支持 JavaScript 的哪些版本
+   補充：(可於[此網站](https://kangax.github.io/compat-table/es6/)查詢各 JS 版本支援語法及目前瀏覽器支援語法，以及[此網站](https://node.green/)查詢 Node.js支援語法)
 2. 注意 JavaScript 版本差異與語法支援，才能在所有的瀏覽器上表現出一致的行為
 3. 確保你使用的任何 JavaScript 的特性對於應用程式要運行的所有環境都是支持的
 4. 一定要在有嚴格模式檢查的環境來測試你的 strict 程式碼
 5. 串接 script 時，注意各檔案的嚴格模式是否不同
-
-
 
