@@ -78,7 +78,12 @@ function foo () {
 -  考量程式碼兼容性，最好的方式是將程式碼封裝並於每一個封裝的函式中設定嚴格模式(模組化管理)。
   -  IIFE + strict mode
   -  export, import(內建 strict mode)
+<<<<<<< HEAD
 >>>>>>> 611fd29551b24037ca8159a7f72a752d586cb9e0
+=======
+  
+  
+>>>>>>> 87602a7c25aaefc322103011d41f371d52f94ebf
 - 從ES5開始，新增了嚴格模式（strict mode）。
 - 嚴格模式支持向上兼容，因此，ES5以前的版本(不支援嚴格模式)"strict mode"後面的程式碼依然可以執行。
 - "strict mode"指令必須被放在一段程式碼的最上方，或者一個函式的頂端，才有作用。
@@ -86,7 +91,7 @@ function foo () {
 以上這些規則會在合併JS檔案時造成一些問題，假如有些JS程式碼是嚴格模式，有些不是，合併或許會導致一些問題，所以盡量不要合併嚴格模式的JS檔案和非嚴格模式的JS檔案。
 
 解決方法：用IIFE包住每個JS檔案的內容
-```
+```javascript
 // no strict-mode directive
 (function() {
 	// file1.js
