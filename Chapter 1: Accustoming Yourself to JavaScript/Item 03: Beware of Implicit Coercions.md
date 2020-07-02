@@ -160,3 +160,42 @@ function position(x) {
 x = position(0);  // 0
 x = position();   // 320
 ```
+```javascript
+"J" + { toString: function() { return "s"; } }; // "JS"
+2 * { valueOf: function(){ return 3; } }; // 6
+```
+
+- 除了 `0, -0, "", NaN, null, undefined` 是 falsy 之外，其他都是 truthy。由於數值與字串可以有 falsy 的情況，所以透過判斷能不能轉為 truthy 這種方式作為判斷條件並不是很恰當，應該**透由判斷參數是否為 `undefined`** 或者**使用 ES6 的預設參數**則較為恰當。
+```javascript=
+function point(x, y) {
+  if (!x) {
+    x = 320;
+  }
+  if (!x) {
+    y = 240;
+  }
+  return { x, y };
+}
+
+// 由於 0 可以轉為 falsy，所以會使判斷條件成立
+point(0, 0); // { x: 320, y: 240 }
+```
+
+```javascript
+function point(x, y) {
+  if (typeof x === 'undefined') {
+    x = 320;
+  }
+  if (typeof y === 'undefined') {
+    y = 240;
+  }
+  return { x, y };
+}
+```
+
+```javascript
+function point(x = 320, y = 240) {
+  return { x, y };
+}
+```
+:::

@@ -33,3 +33,7 @@ ES5 支援, 設計成這樣是為了向上相容性，在舊版沒有副作用�
 解決方法: 
 - 永不串接 strict 檔案與 nonstrict 檔案。
 - 將它們包在 `function` 內 (不同的`scop`)
+
+-  考量程式碼兼容性，最好的方式是將程式碼封裝並於每一個封裝的函式中設定嚴格模式(模組化管理)。
+  -  IIFE + strict mode
+  -  export, import(內建 strict mode)
