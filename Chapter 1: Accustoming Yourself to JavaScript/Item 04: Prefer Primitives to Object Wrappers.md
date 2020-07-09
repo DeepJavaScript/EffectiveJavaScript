@@ -4,7 +4,13 @@
 
 JavaScript 可以透過建構式或字面值來宣告一個基本值，兩者很類似：
 > 基本值：
-> 除了物件外，JavaScript 有5個原始型別：boolean、number、string、null 和 undefined，同時，JavaScript 提供了建構函式來封裝 boolean、number和 string 成為物件，在此用 string 來示範。
+> 除了物件外，JavaScript 有7個原始型別：boolean、number、string、null 和 undefined、symbol、bigInt，同時，JavaScript 提供了建構函式來封裝 boolean、number和 string 成為物件，在此用 string 來示範。
+
+> symbol 跟 BigInt 也有 Natives，但不可以使用 new 來建構，會報錯。
+請參考：
+
+>[Symbol - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol)
+[BigInt - JavaScript | MDN](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/BigInt)
 
 ```javascript
 // 透過建構式
@@ -34,21 +40,33 @@ typeof(name2);    // string
 name1.toUpperCase(); //'LEON'
 ```
 
-1. 基本型別的 wrapper，是放置基本型別需要的 `method` ，而不是用 `constructor` 建立物件。
+1. 基本型別的 wrapper，是放置基本型別需要的 `method` ，不要拿來當 constructor 使用的意思，應該是用來當作轉型用的方法)。
 
 2. 可是如果用字面值建立的，就不是物件，也就沒有相應的方法可以取用。當你要用那些 utility methods 時，JS 會自動幫你用物件 wrapper 將基本型別值包起來，然後就能夠擷取出基本型別值的 property 來呼叫這些方法。
 
 3. 如此一來，透過字面值產生的字串值變數也可以調用方法，它會在調用的當下自動包覆 wrapper，讓它得以取得該方法。
-```javascript
-name2.toUpperCase(); //'LEON'
-```
+  ```javascript
+  name2.toUpperCase(); //'LEON'
+  ```
 4. 由於是當下包覆，執行完該方法後，就又解除包覆，所以在基本值上設定屬性是沒有用的：
+  ```javascript
+  name2.setProperty = '42';
+  name2.setProperty;  // undefined
+  ```
+
+＊證明取用 String 方法時，當下包 wrapper：
 ```javascript
-name2.setProperty = '42';
-name2.setProperty();  //TypeError
+String.prototype.echo = function() { console.log(this)};
+
+a = '12';
+
+a.echo();   // String: {'12'}
 ```
 
 >整理：
 > - 進行相等性比較時，物件 wrapper 和基本型別值的行為不同
 > - 取用或設定基本型別上的 property 時，會隱含地建立物件 wrapper，而且是當下包裹，完成後當下解除。
 >
+
+
+
