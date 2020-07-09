@@ -88,3 +88,39 @@ s.someProperty;  // undefined
 因為每次隱含的 wrap 動作會產生新的 `String` 物件。
 
 註：在基本型別值上設定 property 超沒意義的...
+
+除了物件外，JavaScript 有5個原始型別：boolean、number、string、null 和 undefined。
+
+同時，JavaScript 提供了建構函式來封裝 boolean、number和 string 成為物件，例如：創建 String 物件
+```javascript
+var s = new String('hello');
+typeof s;       //"object"
+typeof 'hello'; //"string"
+```
+某些方面，這些物件的行為和原始字串相似，但不同的是 String物件是一個真正的物件。
+
+因此，當作相等比較時，結果並不相等（每個物件都是獨立的個體，只等於自己）：
+```javascript
+var s1 = new String('hello');
+var s2 = new String('hello');
+s1 === s2;  //false
+s1 == s2;   //false
+```
+
+封裝物件主要有意義的是它的方法，例如：調用字串物件的toUpperCase方法
+```javascript
+s.toUpperCase(); //'HELLO'
+```
+
+而原始字串值也可以調用方法，是因為 JavaScript 會在調用的當下自動包覆成封裝物件，讓它得以取得該方法。
+```javascript
+'hello'.toUpperCase();//"HELLO"
+'hello'.a = 1;
+'hello'.a;//undefined
+```
+
+由於每次自動封裝時都會產生新的 String 物件，因此自定義的屬性或方法無效。
+
+## 重點
+1. 當作相等比較時，原始型別及其封裝後的物件的行為表現是不一樣的。
+2. 在原始型別取得或設置屬性會自動轉換成封裝物件。

@@ -63,3 +63,13 @@ function toYMD(date) {
 }
 toYMD(date) === "1999/12/31";  // true
 ```
+
+### == 運算符的強制轉換規則
+
+| 參數型別1 | 參數型別 2 | 強制轉換規則 |
+| -------- | -------- | -------- |
+| null     | undefined     | 不轉換，總是回傳true    |
+| null 或 undefined     | 其他任何非 null 或 undefined 的型別     | 不轉換，總是回傳 false     |
+| 原始型別：string、number 或 boolean     | Date物件     | 將原始型別轉換成數字;將 Date物件轉換成原始型別(優先嘗試 toString 方法，再嘗試 valueOf 方法)     |
+| 原始型別：string、number 或 boolean     | 非 Date物件     | 將原始型別轉換成數字;將非 Date物件轉換成原始型別(優先嘗試 valueOf 方法，再嘗試 toString 方法)       |
+| 原始型別：string、number 或 boolean     | 原始型別：string、number 或 boolean     | 將原始型別轉換為數字     |
