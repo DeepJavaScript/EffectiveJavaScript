@@ -22,14 +22,16 @@ undefined 變數已被宣告但尚未賦值。
 null 為空值，可以將其賦值給變數。
 
 > NOTE
+>
 > object 採用 valueOf 或 toString 方法轉為基本型別值。但 Date 相反順序嘗試呼叫這兩種方法。
-
-[11.9.3 The Abstract Equality Comparison Algorithm](https://www.ecma-international.org/ecma-262/5.1/#sec-11.9.3)
-
-The comparison x == y, where x and y are values, produces true or false. Such a comparison is performed as follows:
-
-==2. If x is null and y is undefined, return true.==
-==3. If x is undefined and y is null, return true.==
+>
+> == 遇到 undefined 及 null 的話不轉換，可以看以下說明：
+> The comparison x == y, where x and y are values, produces true or false. Such a comparison is performed as follows:
+>
+> 2. If x is null and y is undefined, return true.
+> 3. If x is undefined and y is null, return true.
+>
+> 來源：[11.9.3 The Abstract Equality Comparison Algorithm](https://www.ecma-international.org/ecma-262/5.1/#sec-11.9.3)
 
 ```javascript
 null == undefined; // true
@@ -37,7 +39,7 @@ null == undefined; // true
 // 引數型別1 null 或 undefined，與引數型別2 null 或 undefined 以外的進行寬鬆相等，沒有透過強制轉型規則，永為 false。
 ```
 
-原本是從表單上讀取欄位來跟數字比較：
+轉換範例，從表單上讀取欄位來跟數字比較：
 
 ```javascript
 var today = new Date();
