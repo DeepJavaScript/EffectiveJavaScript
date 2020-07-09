@@ -1,23 +1,33 @@
-# 條款 03 小心隱含的強制轉型(Implicit Coercions)
+# 條款 03 小心隱含的強制轉型 (Implicit Coercions)
 
 JavaScript 對於錯誤型別的容忍度，可以說是大到令人驚訝
  
 ```javascript
-3 + true
+3 + true // 4
 ```
 
-多數語言會報錯。因為 `true` 和**算術運算** `+` 並不相容。
+多數語言會報錯，因為 `true` 和**算術運算** `+` 並不相容。
 靜態型別語言，不被允許執行。
 動態型別語言，能夠執行，不過某些語言會拋出例外。
+
 JavaScript 會執行，並且產生結果 `4`
+但是有數種情況，如果提供了錯誤的型別，就會產生立即的錯誤。
+
+ex: 
+1. 對「非函式」進行「函式呼叫」
 
 ```javascript
-"hello"(1)
-null.x
+"hello"(1) // Uncaught TypeError: "hello" is not a function
 ```
 
-提供錯的型別，會產生立即的錯誤。
-但是，大多數的情況之下，JS不會指出錯誤，而是「強制轉型」成所預期的型別。
+2. 嘗試使用 `null` 的 property
+
+```javascript
+null.x // VM32:1 Uncaught TypeError: Cannot read property 'x' of null
+null?.x // undefined
+```
+
+但是，大多數的情況之下，JavaScript 不會指出錯誤，而是依循各自動轉定，把一個「強制轉型 (coerces) 」成所預期的型別。
 
 ### 加法特性
 
@@ -62,6 +72,11 @@ JS會偏好文字，將數字轉文字。
 ```javascript
 "8" | "1" // 9
 ```
+
+```javascript
+"a" | "b" // 0
+```
+
 
 ### 強制轉型也有錯
 

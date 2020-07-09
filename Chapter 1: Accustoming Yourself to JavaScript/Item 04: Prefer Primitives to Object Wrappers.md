@@ -62,9 +62,9 @@ name2.setProperty(); //TypeError
 > - 進行相等性比較時，物件 wrapper 和基本型別值的行為不同
 > - 取用或設定基本型別上的 property 時，會隱含地建立物件 wrapper，而且是當下包裹，完成後當下解除。
 
-[The history of “typeof null”](https://2ality.com/2013/10/typeof-null.html)
+[The history of "typeof null"](https://2ality.com/2013/10/typeof-null.html)
 
-The “typeof null” bug is a remnant from the first version of JavaScript. In this version, values were stored in 32 bit units, which consisted of a small type tag (1–3 bits) and the actual data of the value. The type tags were stored in the lower bits of the units. There were five of them:
+The "typeof null" bug is a remnant from the first version of JavaScript. In this version, values were stored in 32 bit units, which consisted of a small type tag (1~3 bits) and the actual data of the value. The type tags were stored in the lower bits of the units. There were five of them:
 
 - 000: object. The data is a reference to an object.
 - 1: int. The data is a 31 bit signed integer.
