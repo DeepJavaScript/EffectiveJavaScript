@@ -4,22 +4,18 @@
 
 多數的語言，都有很多種數字型別，JavaScript，只有一種: `number` 型別，其實都是 `double-precision` 數字 ([IEEE 754](https://zh.wikipedia.org/wiki/IEEE_754) 的 64 位元數字)。
 
-<<<<<<< HEAD
 
 ### 條款 02 了解 Javascript 的浮點數字
-=======
 **string to number**
 
 - `parseInt()`
 - `parseFloat()`
->>>>>>> 737cb39d2c1366ab1634ce3737613bdae599c96b
 
 **number to string**
 
 - `3 .toString()`
 - `3 .toString(2)` // 轉二進制
 
-<<<<<<< HEAD
   8 | 1; // 1001 => 9
   parseInt("1001", 2); // 9
   ```
@@ -31,9 +27,7 @@
     > 盡量運用整數做運算可以避免誤差：
     ```javascript
     const caryOver = 10;
-=======
 ## 整數
->>>>>>> 737cb39d2c1366ab1634ce3737613bdae599c96b
 
 在 double 中的整數，有效表示範圍
 -9007199254740992 (-2^53) 到 9007199254740992 (2^53)
@@ -90,7 +84,6 @@ parseInt("00010001110100011010111000111000", 2);  // 298954296
 
 ### 浮點誤差
 
-<<<<<<< HEAD
 ```javascript
 0.1 + 0.2;  // 0.30000000000000004
 
@@ -104,9 +97,7 @@ parseInt("00010001110100011010111000111000", 2);  // 298954296
 
   ```javascript
   const caryOver = 10;
-=======
 浮點數運算，如果超過 64 位元的話會有捨入誤差。
->>>>>>> 737cb39d2c1366ab1634ce3737613bdae599c96b
 
 ```javascript
 0.1 + 0.2 = 0.30000000000000004;
@@ -124,7 +115,6 @@ parseInt("00010001110100011010111000111000", 2);  // 298954296
 
 **運用整數做運算**
 
-<<<<<<< HEAD
 ```
 (0.1 + 0.2) + 0.3; // 0.6000000000000001
 0.1 + (0.2 + 0.3); // 0.6
@@ -132,13 +122,11 @@ parseInt("00010001110100011010111000111000", 2);  // 298954296
 
 所以建議用整數運算：
 
-=======
 ```javascript
 const caryOver = 10;
 if ((0.1 * caryOver + 0.2 * caryOver)/caryOver === 0.3) //true
 ```
 
->>>>>>> 737cb39d2c1366ab1634ce3737613bdae599c96b
 ```javascript
 (10 + 20) + 30; // 60
 10 + (20 + 30); // 60
@@ -146,27 +134,22 @@ if ((0.1 * caryOver + 0.2 * caryOver)/caryOver === 0.3) //true
 
 **運用夾擊判斷**
 
-<<<<<<< HEAD
 建議：
 - 放大浮點數，以整數來計算就不會發生運算結果不精確的問題
   - 使用整數就能處理 $-2^{53}$ 到 $2^{53}$ 範圍間的所有計算，且不用擔心捨入誤差 (rounding errors)
 解決方式：
 盡量使用範圍在 –2 ^53 和 2 ^53 之間的整數進行計算，然後再處理放大倍數
-=======
 ```javascript
 const value = 0.1 + 0.2;
 value // 0.30000000000000004
 if (0.2999999 < value && value < 0.3000001)
 ```
->>>>>>> 737cb39d2c1366ab1634ce3737613bdae599c96b
 
 **運用 JavaScript 的可忽略誤差: `Number.EPSILON`**
 
-<<<<<<< HEAD
 1、JS 的數字都是 double-precision floating-point，整數是其中一個子集，不是單獨的資料型別
 2、位元運算子將數字視為 32 bits 的有符號整數
 3、小心浮點數計算的精度問題
-=======
 ```javascript
 function numbersCloseEnoughToEqual(n1,n2) {
 	return Math.abs( n1 - n2 ) < Number.EPSILON;
@@ -183,4 +166,3 @@ numbersCloseEnoughToEqual( 0.0000001, 0.0000002 );
 ```javascript
 numbersCloseEnoughToEqual((0.1 + 0.2) + 0.3, 0.6)
 ```
->>>>>>> 737cb39d2c1366ab1634ce3737613bdae599c96b
