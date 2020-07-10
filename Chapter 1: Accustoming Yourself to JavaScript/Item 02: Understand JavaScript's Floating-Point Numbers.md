@@ -4,29 +4,38 @@
 
 多數的語言，都有很多種數字型別，JavaScript，只有一種: `number` 型別，其實都是 `double-precision` 數字 ([IEEE 754](https://zh.wikipedia.org/wiki/IEEE_754) 的 64 位元數字)。
 
+### IEEE 754
 
-### 條款 02 了解 Javascript 的浮點數字
+稱呼: 
+1. 標準的全名: IEEE二進位浮點數算術標準 (ANSI/IEEE Std 754-1985)
+1. 又稱IEC 60559:1989，微處理器系統的二進位浮點數算術 (本來的編號是IEC 559:1989)。
+1. 還有「與基數無關的浮點數」的「IEEE 854-1987標準」，有規定基數為2跟10的狀況。
+1. 現在最新標準是「ISO/IEC/IEEE FDIS 60559:2010」。
+
+制定的特殊值
+
+|值|指數|小數| 正負號 |
+|-|-|-|-|
+| `±0` | 0 | 0 | 符號位相關 |
+| `±Infinity` | 2^e - 1 | 0 | 符號位相關 |
+| NaN | 2^e - 1 | 非0 | 符號位無關 |
+
+> 正負號，指的是逼近 0 或 Infinity 的方向
+
+### 互換 string 和 number 的方式
+
 **string to number**
 
-- `parseInt()`
-- `parseFloat()`
+- `parseInt("30")`
+- `parseFloat("30")`
+- `"30" | 0` // only 32-bit
 
 **number to string**
 
 - `3 .toString()`
 - `3 .toString(2)` // 轉二進制
 
-  8 | 1; // 1001 => 9
-  parseInt("1001", 2); // 9
-  ```
-- 浮點數運算，如果超過 64 位元的話會有捨入誤差。
-    ```javascript
-    0.1 + 0.2 = 0.30000000000000004;
-    0.1 + 0.2 === 0.3;  // false
-    ```
-    > 盡量運用整數做運算可以避免誤差：
-    ```javascript
-    const caryOver = 10;
+
 ## 整數
 
 在 double 中的整數，有效表示範圍
