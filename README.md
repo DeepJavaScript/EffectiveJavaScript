@@ -19,7 +19,7 @@ deepJS 讀書會的其中一本書。
 - [Item 03: Beware of Implicit Coercions](Chapter%201%3A%20Accustoming%20Yourself%20to%20JavaScript/Item%2003%3A%20Beware%20of%20Implicit%20Coercions.md)
 - [Item 04: Prefer Primitives to Object Wrappers](Chapter%201%3A%20Accustoming%20Yourself%20to%20JavaScript/Item%2004%3A%20Prefer%20Primitives%20to%20Object%20Wrappers.md)
 - [Item 05: Avoid using == with Mixed Types](Chapter%201%3A%20Accustoming%20Yourself%20to%20JavaScript/Item%2005%3A%20Avoid%20using%20==%20with%20Mixed%20Types.md)
------- 聚會進度 ------
+- ------ 聚會進度 ------
 - [Item 06: Learn the Limits of Semicolon Insertion](Chapter%201%3A%20Accustoming%20Yourself%20to%20JavaScript/Item%2006%3A%20Learn%20the%20Limits%20of%20Semicolon%20Insertion.md)
 - [Item 07: Think of Strings As Sequences of 16-Bit Code Units](Chapter%201%3A%20Accustoming%20Yourself%20to%20JavaScript/Item%2007:%20Think%20of%20Strings%20As%20Sequences%20of%2016-Bit%20Code%20Units.md)
 
