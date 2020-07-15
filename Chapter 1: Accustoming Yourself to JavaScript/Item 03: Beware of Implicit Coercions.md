@@ -1,4 +1,4 @@
-# 條款 03 小心隱含的強制轉型(Implicit Coercions)
+# 條款 03 小心隱含的強制轉型 (Implicit Coercions)
 
 JavaScript 對於錯誤型別的容忍度，可以說是大到令人驚訝。
 
