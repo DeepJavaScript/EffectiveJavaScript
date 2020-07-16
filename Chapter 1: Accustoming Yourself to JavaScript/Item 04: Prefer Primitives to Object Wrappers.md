@@ -5,7 +5,6 @@
 JavaScript 可以透過建構式或字面值來宣告一個基本值，兩者很類似：
 
 > 基本值：
-<<<<<<< HEAD
 > 除了物件外，JavaScript 有7個原始型別：boolean、number、string、null 和 undefined、symbol、bigInt，同時，JavaScript 提供了建構函式來封裝 boolean、number和 string 成為物件，在此用 string 來示範。
 
 > symbol 跟 BigInt 也有 Natives，但不可以使用 new 來建構，會報錯。
@@ -13,9 +12,6 @@ JavaScript 可以透過建構式或字面值來宣告一個基本值，兩者很
 
 >[Symbol - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol)
 [BigInt - JavaScript | MDN](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/BigInt)
-=======
-> 除了物件外，JavaScript 有 5 個原始型別：boolean、number、string、null 和 undefined，同時，JavaScript 提供了建構函式來封裝 boolean、number 和 string 成為物件，在此用 string 來示範。
->>>>>>> 0a6204c8d5bde77f57b3376261eec49f967bce4a
 
 ```javascript
 // 透過建構式
