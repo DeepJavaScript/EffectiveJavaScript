@@ -1,88 +1,171 @@
 # 條款 08 盡量少用全域物件
+摘要
+1. 避免宣告全域變數
+2. 盡量將變數宣告在 black scope 
+3. 避免為全域物件新增特性
+4. 使用全域物件來進行平台的功能偵測
 
-## 可能導致的命名衝突
-  全域變數在不同的作用域中計算，互相污染，導致結果值不如預期：
-  ```javascript
-  var i, sum;  //全域變數
-  var amountArray = [
-    [2, 2, 4],
-    [5, 1, 2],
-    [3, 1, 4]
-  ];
-  
-  const totalAmount = total();
-  console.log(totalAmount);   // 8
-
-  function total() {
-    sum = 0;
-    for(i=0 ; i<amountArray.length ; i++) {
-      sum += part(amountArray[i]);
-      console.log(`i 目前的值為 ${i}, 總計算結果為： ${ sum }`);
-    }
-    return sum;
-  }
-
-  function part(item) {
-    sum = 0;
-    for(i=0 ; i<item.length ; i++) {
-      sum += item[i];
-      console.log(`第${i + 1}次計算結果為： ${ sum }`);
-    }
-    return sum;
-  }
-  ```
-
-## 盡量將變數區域化
+## 1. 避免宣告全域變數 & 2. 盡量將變數宣告在 black scope 
+全域變數污染
 ```javascript
-var amountArray = [
-    [2, 2, 4],
-    [5, 1, 2],
-    [3, 1, 4]
-  ];
-  
-const totalAmount = total();
-console.log(totalAmount);
+//範例8.1
+var players=[
+	{
+		player: 'A',
+		levels:[
+			{
+				score: 99
+			},
+			{
+				score: 29
+			},
+			{
+				score: 39
+			}
+		]
+	},
+	{
+		player: 'B',
+		levels:[
+			{
+				score: 10
+			},
+			{
+				score: 20
+			},
+			{
+				score: 30
+			}
+		]
+	}
+];
 
-function total() {
-  var i, sum;  //全域變數
-  sum = 0;
-  for(i=0 ; i<amountArray.length ; i++) {
-    sum += part(amountArray[i]);
-    console.log(`i 目前的值為 ${i}, 總計算結果為： ${ sum }`);
-  }
-  return sum;
-}
+var i, n, sum;
+function averageScore(players){
+	sum = 0;
+	for(i=0, n=players.length; i < n; i++){
+		console.log('>>>>>> averageScore',n)
+		sum += score(players[i]);
+	}
+	debugger;
+	return sum / n;
+};
+function score(player){
+	sum = 0;
+	for(i=0, n=player.levels.length; i < n; i++){
+		console.log('>>>>>> score',n)
+		sum += player.levels[i].score;
+	}
+	debugger;
+	return sum;
+};
 
-function part(item) {
-  var i, sum;  //全域變數
-  sum = 0;
-  for(i=0 ; i<item.length ; i++) {
-    sum += item[i];
-    console.log(`第${i + 1}次計算結果為： ${ sum }`);
-  }
-  return sum;
+averageScore(players);
+
+```
+
+改寫
+```javascript
+//範例8.2
+var players=[
+	{
+		player: 'A',
+		levels:[
+			{
+				score: 99
+			},
+			{
+				score: 29
+			},
+			{
+				score: 39
+			}
+		]
+	},
+	{
+		player: 'B',
+		levels:[
+			{
+				score: 10
+			},
+			{
+				score: 20
+			},
+			{
+				score: 30
+			}
+		]
+	}
+];
+
+function averageScore(players){
+	let i, n, sum;
+	sum = 0;
+	for(i=0, n=players.length; i < n; i++){
+		console.log('>>>>>> averageScore',n)
+		sum += score(players[i]);
+	}
+	debugger;
+	return sum / n;
+};
+function score(player){
+	let i, n, sum;
+	sum = 0;
+	for(i=0, n=player.levels.length; i < n; i++){
+		console.log('>>>>>> score',n)
+		sum += player.levels[i].score;
+	}
+	debugger;
+	return sum;
+};
+
+averageScore(players);
+
+```
+
+## 3. 避免為全域物件新增特性
+web 瀏覽器中，全域物件會被 bind 到全域的 window 變數，而 window 變數是 `this` 關鍵字的初始值
+
+```javascript
+//範例8.3
+this.foo; //undefined
+foo = 'global foo';
+this.foo; //"global foo"
+```
+
+```javascript
+//範例8.4
+var foo = 'global foo';
+this.foo = 'changed';
+foo; //"changed"
+```
+
+## 4. 使用全域物件來進行平台的功能偵測
+全域物件不可或缺的用途是，可在執行環境中查詢平台上有哪些功能可用
+例如：ES 5 引進 JSON 全域物件，假設部署程式碼的環境尚未提供 JSON 物件，則可測試這個全域物件是否存在，並提供一個替代的實作
+
+```javascript
+if(!this.JSON){
+	this.JSON = {
+		parse: ...,
+		stringify: ...
+	}
 }
 ```
-## 功能偵測的應用
-透過 this，可以查看宿主環境是否有提供該功能：
-:::info
-宿主環境為：
-- 瀏覽器，this 為 window
-- node.js，this 為 global
-:::
+
+#### 補充
+[MDN-Window](https://developer.mozilla.org/zh-TW/docs/Web/API/Window)
+[MDN-Window.navigator](https://developer.mozilla.org/zh-TW/docs/Web/API/Window/navigator)
+[MDN-透過用戶代理偵測瀏覽器](https://developer.mozilla.org/zh-TW/docs/Web/HTTP/Browser_detection_using_the_user_agent)
+
+Window 物件提供很多 properties 可用，例如：透用用戶代理，偵測用戶設備有沒有觸控螢幕
 ```javascript
-// polyfill 查看宿主環境有沒有提供 JSON 物件
-// 如果沒有就在全域物件新增 JSON 物件，並寫入屬性
-if(!this.JSON) {
-  this.JSON = {
-    parse: ...,
-    stringify: ...
-  }
-}
+var hasTouchScreen = window.navigator.maxTouchPoints;
+console.log(hasTouchScreen);
 ```
-## Question:
-- 未繫結變數是什麼？
-- 用 `var` 宣告的全域變數跟綁在全域物件上的變數，以及沒有用 var 宣告的變數，有差嗎？
+
+<!-- 以下為其他人整理 -->
+
 
 建立全域變數很簡單，像這樣子：
 
