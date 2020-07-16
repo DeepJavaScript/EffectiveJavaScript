@@ -19,12 +19,12 @@ deepJS 讀書會的其中一本書。
 - [Item 03: Beware of Implicit Coercions](Chapter%201%3A%20Accustoming%20Yourself%20to%20JavaScript/Item%2003%3A%20Beware%20of%20Implicit%20Coercions.md)
 - [Item 04: Prefer Primitives to Object Wrappers](Chapter%201%3A%20Accustoming%20Yourself%20to%20JavaScript/Item%2004%3A%20Prefer%20Primitives%20to%20Object%20Wrappers.md)
 - [Item 05: Avoid using == with Mixed Types](Chapter%201%3A%20Accustoming%20Yourself%20to%20JavaScript/Item%2005%3A%20Avoid%20using%20==%20with%20Mixed%20Types.md)
-- ------ 聚會進度 ------
 - [Item 06: Learn the Limits of Semicolon Insertion](Chapter%201%3A%20Accustoming%20Yourself%20to%20JavaScript/Item%2006%3A%20Learn%20the%20Limits%20of%20Semicolon%20Insertion.md)
 - [Item 07: Think of Strings As Sequences of 16-Bit Code Units](Chapter%201%3A%20Accustoming%20Yourself%20to%20JavaScript/Item%2007:%20Think%20of%20Strings%20As%20Sequences%20of%2016-Bit%20Code%20Units.md)
 
 ## Chapter 2: Variable Scope
 
+- ------ 聚會進度 ------
 - [Item 08: Minimize Use of the Global Object](Chapter%202%3A%20Variable%20Scope/Item%2008%3A%20Minimize%20Use%20of%20the%20Global%20Object.md)
 - [Item 09: Always Declare Local Variables](Chapter%202%3A%20Variable%20Scope/Item%2009%3A%20Always%20Declare%20Local%20Variables.md)
 - [Item 10: Avoid with](Chapter%202%3A%20Variable%20Scope/Item%2010%3A%20Avoid%20with.md)
