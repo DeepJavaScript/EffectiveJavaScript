@@ -63,3 +63,24 @@ var turkeyAnd = sandwichMaker("turkey");
 turkeyAnd("Swiss"); // "turkey and Swiss" 
 turkeyAnd("Provolone"); // "turkey and Provolone"
 ```
+
+另一個厲害的例子。
+利用回傳的物件來改變外層函數裡的變數。
+
+```javascript
+function box () {
+  var value = undefined;
+  return {
+    set: function (newVal) {
+      value = newVal;
+    },
+    get: function () { return value; },
+    type: function () { return typeof value; }
+  };
+}
+var b = box();
+b.type(); // "undefined" 
+b.set(98.6); 
+b.get(); // 98.6  
+b.type(); // "number"
+```
