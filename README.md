@@ -24,11 +24,11 @@ deepJS 讀書會的其中一本書。
 
 ## Chapter 2: Variable Scope
 
-- ------ 聚會進度 ------
 - [Item 08: Minimize Use of the Global Object](Chapter%202%3A%20Variable%20Scope/Item%2008%3A%20Minimize%20Use%20of%20the%20Global%20Object.md)
 - [Item 09: Always Declare Local Variables](Chapter%202%3A%20Variable%20Scope/Item%2009%3A%20Always%20Declare%20Local%20Variables.md)
 - [Item 10: Avoid with](Chapter%202%3A%20Variable%20Scope/Item%2010%3A%20Avoid%20with.md)
 - [Item 11: Get Comfortable with Closures](Chapter%202%3A%20Variable%20Scope/Item%2011%3A%20Get%20Comfortable%20with%20Closures.md)
+- ------ 聚會進度 ------
 - [Item 12: Understand Variable Hoisting](Chapter%202%3A%20Variable%20Scope/Item%2012%3A%20Understand%20Variable%20Hoisting.md)
 - [Item 13: Use Immediately Invoked Function Expressions to Create Local Scopes](Chapter%202%3A%20Variable%20Scope/Item%2013:%20Use%20Immediately%20Invoked%20Function%20Expressions%20to%20Create%20Local%20Scopes.md)
 - [Item 14: Beware of Unportable Scoping of Named Function Expressions](Chapter%202%3A%20Variable%20Scope/Item%2014:%20Beware%20of%20Unportable%20Scoping%20of%20Named%20Function%20Expressions.md)
