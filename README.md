@@ -19,7 +19,6 @@ deepJS 讀書會的其中一本書。
 - [Item 03: Beware of Implicit Coercions](Chapter%201%3A%20Accustoming%20Yourself%20to%20JavaScript/Item%2003%3A%20Beware%20of%20Implicit%20Coercions.md)
 - [Item 04: Prefer Primitives to Object Wrappers](Chapter%201%3A%20Accustoming%20Yourself%20to%20JavaScript/Item%2004%3A%20Prefer%20Primitives%20to%20Object%20Wrappers.md)
 - [Item 05: Avoid using == with Mixed Types](Chapter%201%3A%20Accustoming%20Yourself%20to%20JavaScript/Item%2005%3A%20Avoid%20using%20==%20with%20Mixed%20Types.md)
-- ------ 聚會進度 ------
 - [Item 06: Learn the Limits of Semicolon Insertion](Chapter%201%3A%20Accustoming%20Yourself%20to%20JavaScript/Item%2006%3A%20Learn%20the%20Limits%20of%20Semicolon%20Insertion.md)
 - [Item 07: Think of Strings As Sequences of 16-Bit Code Units](Chapter%201%3A%20Accustoming%20Yourself%20to%20JavaScript/Item%2007:%20Think%20of%20Strings%20As%20Sequences%20of%2016-Bit%20Code%20Units.md)
 
@@ -29,6 +28,7 @@ deepJS 讀書會的其中一本書。
 - [Item 09: Always Declare Local Variables](Chapter%202%3A%20Variable%20Scope/Item%2009%3A%20Always%20Declare%20Local%20Variables.md)
 - [Item 10: Avoid with](Chapter%202%3A%20Variable%20Scope/Item%2010%3A%20Avoid%20with.md)
 - [Item 11: Get Comfortable with Closures](Chapter%202%3A%20Variable%20Scope/Item%2011%3A%20Get%20Comfortable%20with%20Closures.md)
+- ------ 聚會進度 ------
 - [Item 12: Understand Variable Hoisting](Chapter%202%3A%20Variable%20Scope/Item%2012%3A%20Understand%20Variable%20Hoisting.md)
 - [Item 13: Use Immediately Invoked Function Expressions to Create Local Scopes](Chapter%202%3A%20Variable%20Scope/Item%2013:%20Use%20Immediately%20Invoked%20Function%20Expressions%20to%20Create%20Local%20Scopes.md)
 - [Item 14: Beware of Unportable Scoping of Named Function Expressions](Chapter%202%3A%20Variable%20Scope/Item%2014:%20Beware%20of%20Unportable%20Scoping%20of%20Named%20Function%20Expressions.md)
