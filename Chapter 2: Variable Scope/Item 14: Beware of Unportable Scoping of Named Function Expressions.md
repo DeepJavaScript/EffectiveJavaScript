@@ -1,15 +1,17 @@
 # 條款 14 小心具名的函式運算式造成不可移植的範疇
 
 > 不用考慮這件事了。
+> 
 > 不過要知道 Function Declearation 的名稱用來做什麼的
-> [color=red]
+>
+> debugger 和 遞迴用的
 
 函式有兩種
 
 1. Function Statement/Function Declearation(函式陳述句、宣告式)  `function a () {}`
 2. Function Expression(函式表達式、表示式) `var a = function () {}`
 
-> 函式運算式 (函式陳述句 Function Statements)
+> Function Statements (函式運算式、函式陳述句)
 > 
 > function declearation
 > naned function expression
