@@ -28,7 +28,6 @@ deepJS 讀書會的其中一本書。
 - [Item 09: Always Declare Local Variables](Chapter%202%3A%20Variable%20Scope/Item%2009%3A%20Always%20Declare%20Local%20Variables.md)
 - [Item 10: Avoid with](Chapter%202%3A%20Variable%20Scope/Item%2010%3A%20Avoid%20with.md)
 - [Item 11: Get Comfortable with Closures](Chapter%202%3A%20Variable%20Scope/Item%2011%3A%20Get%20Comfortable%20with%20Closures.md)
-- ------ 聚會進度 ------
 - [Item 12: Understand Variable Hoisting](Chapter%202%3A%20Variable%20Scope/Item%2012%3A%20Understand%20Variable%20Hoisting.md)
 - [Item 13: Use Immediately Invoked Function Expressions to Create Local Scopes](Chapter%202%3A%20Variable%20Scope/Item%2013:%20Use%20Immediately%20Invoked%20Function%20Expressions%20to%20Create%20Local%20Scopes.md)
 - [Item 14: Beware of Unportable Scoping of Named Function Expressions](Chapter%202%3A%20Variable%20Scope/Item%2014:%20Beware%20of%20Unportable%20Scoping%20of%20Named%20Function%20Expressions.md)
@@ -39,6 +38,7 @@ deepJS 讀書會的其中一本書。
 ## Chapter 3: Working with Functions
 
 - [Item 18: Understand the Difference between Function, Method, and Constructor Calls](Chapter%203%3A%20Working%20with%20Functions/Item%2018:%20Understand%20the%20Difference%20between%20Function,%20Method,%20and%20Constructor%20Calls.md)
+- ------ 聚會進度 ------
 - [Item 19: Get Comfortable Using Higher-Order Functions](Chapter%203%3A%20Working%20with%20Functions/Item%2019%3A%20Get%20Comfortable%20Using%20Higher-Order%20Functions.md)
 - [Item 20: Use call to Call Methods with a Custom Receiver](Chapter%203%3A%20Working%20with%20Functions/Item%2020%3A%20Use%20call%20to%20Call%20Methods%20with%20a%20Custom%20Receiver.md)
 - [Item 21: Use apply to Call Functions with Different Numbers of Arguments](Chapter%203%3A%20Working%20with%20Functions/Item%2021:%20Use%20apply%20to%20Call%20Functions%20with%20Different%20Numbers%20of%20Arguments.md)

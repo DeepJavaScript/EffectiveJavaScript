@@ -18,7 +18,7 @@ var f = wrapped[0];
 f() // undefined
 ```
 
-- 程式執行時期 (runtime) 進入到一個範疇 (scope) 時，會為該範疇內的每一個變數繫結 (variable binding) 都在記憶體中配置 (如果區塊範疇沒有宣告，就參考外層區塊的變數記憶體位置) 一個「位置」(slot)。 (所以跨範疇跟不跨範疇都會產生 bind 的行為。)
+- 程式執行時期 (runtime) 進入到一個範疇 (scope) 時，會為該範疇內的每一個變數繫結 (variable binding) 都在記憶體中配置一個「位置」(slot)。  (如果區塊範疇沒有宣告，也就不會有繫結的行為，而是參考外層區塊的變數記憶體位置。) 
 - wrapElements 函式繫結三個區域變數：result、i 以及 n。在這個迴圈的每次迭代動作中，迴圈主體會為嵌套函式配置一個 closure。
 - 巢狀函式被建立時，儲存的是對 i 的一個參考 (reference)，而不是當下值。既然 i 的值會在每個函式被建立之後改變，那些內層函式所看見的會是 i 的最終值。這就是閉包 (closures) 的關鍵所在：
 
@@ -29,7 +29,7 @@ function wrapElements(a){
   var result = [];
   for(var i = 0, n = a.length; i < n; i++){
     (function() {
-      var j = i;
+      var j = i; // 進到一個範疇，j 被繫結到一個記憶體位置，並將當下的 i 值指定給 j。
       result[i] = function(){ return a[j];};
       console.log('inside', i, j);
     })();
@@ -65,6 +65,10 @@ f() // 10
 - 外部的 i 區域依然是提升宣告，所以值會參考同一個記憶體內的值，還是會接到 for 迴圈這個範疇以外的 i 值。
 - 所以呼叫第 0 個函式，函式內的 j 會是存取當下的 0。
 - `f()` 的回傳值會是 a 陣列第 0 個 10。
+
+名詞定義：
+- 指定，等同與賦值。
+- 繫結，等同於宣告。
 
 ## 重點整理
 - 理解繫結 (binding) 與指定 (assignment) 的之間的差異。
