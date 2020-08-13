@@ -1,4 +1,4 @@
-# 25. 使用 `bind` 擷取出具有固定接收者的方法
+# 條款 25 使用 bind 擷取出具有固定接收者的方法
 
 書中說的「固定接收者 (fixed receiver)」即為 `this` binding。
 

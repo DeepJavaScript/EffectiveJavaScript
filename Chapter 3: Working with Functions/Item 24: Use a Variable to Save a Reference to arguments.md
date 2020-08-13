@@ -1,0 +1,1 @@
+# 條款 24 使用一個變數來儲存對 arguments的參考(Reference)
