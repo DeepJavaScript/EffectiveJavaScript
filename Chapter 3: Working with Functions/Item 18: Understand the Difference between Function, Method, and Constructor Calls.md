@@ -3,6 +3,17 @@
 
 ❓ 疑惑其他語言的狀況？
 
+- 程序(procedures)：一般的 function
+- 方法(methods)：物件裡的 function，通常會含有 this
+- 建構式(constructors)：用 new 產生藍圖的過程，通常為 new + 類別名稱
+- 類別(classes)：物件的藍圖，通常語言會設計成類別的名字，也就為 constructors 的名字
+- 模組(modules)：檔案層級
+
+以上述五個功能來說，都是各自獨立的功能，但 JS 可以統一以函式來理解處理。
+以 class 中的 constructors 為例，其他語言的 constructors 是黑盒子，沒辦法看到內部情況，但 JS 的 constructors 就是函式，可以自訂內容。
+
+--- 
+
 
 ## 函式、方法與類別在 JS 中是函式的三種使用方式
 ### 用途一：函式呼叫
@@ -30,7 +41,23 @@ var obj2 ={
 obj2.hello(); //"hello,Hans Gruber"
 ```
 - 對一個方法呼叫而言，實際上是由呼叫運算式本身負責決定 this 的繫結，而 this 也被稱為該次呼叫的接收者。
-- obj2.hello() 會去查找 obj2 的 hello 特性(在此這個特性剛好是與 obj.hello 相同的函式)，不過是以 obj2 為接收者來呼叫他
+
+```javascript
+var obj1 ={
+  hello:function(){
+    return "hello," + this.username;
+  },
+  username: "Han Gru"
+}
+
+var obj2 ={
+  hello:obj1.hello,
+  username: "Hans Gruber"
+}
+obj2.hello(); //"hello,Hans Gruber"
+```
+
+- obj2.hello() 會去查找 obj2 的 hello 特性(在此這個特性剛好是與 obj1.hello 相同的函式)，不過是以 obj2 為接收者來呼叫他
 - 在一個物件上呼叫一個方法，就會在那個物件上查找那個方法，然後使用該物件作為方法的接收者。
   
 那麼接下來讓一個普通函式提及 this，並讓多個物件共用它
