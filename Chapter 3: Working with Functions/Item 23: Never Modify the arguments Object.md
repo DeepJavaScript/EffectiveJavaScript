@@ -83,9 +83,20 @@ callMethod(obj, 'add', 17 ,25); //42
 - `...` 其餘參數
 
 ```javascript=
-function callMethod(obj, method, ...values) {
-  return obj[method].apply(obj, values);
+function callMethod(obj, method, ...args) {
+  return obj[method].apply(obj, args);
 }
 var obj = { add: function(x, y) {  return x + y } }
 callMethod(obj, 'add', 17 ,25); //42
 ```
+
+- `...` 展開運算子
+
+```javascript=
+function callMethod(obj, method) {
+  let args = [...arguments].slice(2)
+  return obj[method].apply(obj, args);
+}
+var obj = { add: function(x, y) {  return x + y } }
+callMethod(obj, 'add', 17 ,25); //42
+````
