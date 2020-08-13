@@ -51,6 +51,24 @@ function average() {
 average([1, 2, 3, 4, 5]);  // NaN
 average(1, 2, 3, 4, 5);    // 3
 ```
+### ...args 剩餘參數的特性
+
+原生 JavaScript 也有剩餘參數可利用，在註冊函式時，用剩餘參數可以接著呼叫時數量不等的引數。
+- `...args` 是陣列，因此陣列的方法它都有繼承到，都可使用。
+- `...args` 可以是單獨行參，也可以在前面放數量不等的形式參數。
+- `...args` 應該作為最後一個參數。
+
+```javascript
+function avergeChagebleArg(...args) {
+  for(var i = 0, sum = 0; i < args.length; i++){
+    sum += args[i];        
+  }
+  return sum / args.length;
+}
+
+avergeChagebleArg(1, 2, 3, 4, 5);
+```
+
 ### 各自的限制
 
 以上兩種方法，都可以達到介面得彈性，讓使用者傳入任意的參數數量，可是它們各自也有限制。
