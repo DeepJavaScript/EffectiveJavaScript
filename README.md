@@ -38,12 +38,12 @@ deepJS 讀書會的其中一本書。
 ## Chapter 3: Working with Functions
 
 - [Item 18: Understand the Difference between Function, Method, and Constructor Calls](Chapter%203%3A%20Working%20with%20Functions/Item%2018:%20Understand%20the%20Difference%20between%20Function,%20Method,%20and%20Constructor%20Calls.md)
-- ------ 聚會進度 ------
 - [Item 19: Get Comfortable Using Higher-Order Functions](Chapter%203%3A%20Working%20with%20Functions/Item%2019%3A%20Get%20Comfortable%20Using%20Higher-Order%20Functions.md)
 - [Item 20: Use call to Call Methods with a Custom Receiver](Chapter%203%3A%20Working%20with%20Functions/Item%2020%3A%20Use%20call%20to%20Call%20Methods%20with%20a%20Custom%20Receiver.md)
 - [Item 21: Use apply to Call Functions with Different Numbers of Arguments](Chapter%203%3A%20Working%20with%20Functions/Item%2021:%20Use%20apply%20to%20Call%20Functions%20with%20Different%20Numbers%20of%20Arguments.md)
 - [Item 22: Use arguments to Create Variadic Functions](Chapter%203%3A%20Working%20with%20Functions/Item%2022%3A%20Use%20arguments%20to%20Create%20Variadic%20Functions.md)
 - [Item 23: Never Modify the arguments Object](Chapter%203%3A%20Working%20with%20Functions/Item%2023%3A%20Never%20Modify%20the%20arguments%20Object.md)
+- ------ 聚會進度 ------
 - [Item 24: Use a Variable to Save a Reference to arguments](Chapter%203%3A%20Working%20with%20Functions/Item%2024%3A%20Use%20a%20Variable%20to%20Save%20a%20Reference%20to%20arguments.md)
 - [Item 25: Use bind to Extract Methods with a Fixed Receiver](Chapter%203%3A%20Working%20with%20Functions/Item%2025%3A%20Use%20bind%20to%20Extract%20Methods%20with%20a%20Fixed%20Receiver.md)
 - [Item 26: Use bind to Curry Functions](Chapter%203%3A%20Working%20with%20Functions/Item%2026%3A%20Use%20bind%20to%20Curry%20Functions.md)

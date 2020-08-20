@@ -78,8 +78,10 @@ function test(x) {
 }
 
 test(true); // ["local", "global"]
-test(false); // ["local"]
+test(false); // ["global"]
 ```
+
+補充：在 MDN 中有提到從非嚴格模式過渡至嚴格模式，如果在 if 的 block 中宣告 function，會報出 syntax error [Transitioning to strict mode -MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode/Transitioning_to_strict_mode)
 
 建議使用變數配合條件式的指定
 
@@ -92,7 +94,7 @@ function test(x) {
   var g = f;
   var result = [];
   if (x) {
-    g = function f() {
+    g = function () {
       return "local";
     };
     result.push(g());

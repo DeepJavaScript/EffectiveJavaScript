@@ -1,6 +1,6 @@
 # 條款 20 使用 call 以自訂的接收者來呼叫方法
 
-一般來說 method 的 this 是呼叫 method 的物件。
+method 的 this 是呼叫 method 的物件。
 但是我們有時需要自定義某個函式(包含 function/method) 的 this，指定成我們想要的物件。
 但是該物件的屬性並不擁有這個函式，無法直接使用。
 
