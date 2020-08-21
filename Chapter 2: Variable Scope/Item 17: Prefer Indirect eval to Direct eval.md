@@ -126,7 +126,7 @@ function test(){
   return x;
 }
 
-test() // 'local'，有無使用嚴格模式無差異。
+test() // 123，有無使用嚴格模式無差異。
 ```
 > let，const 或 class 聲明引入的綁定始終在新的 LexicalEnvironment 中實例化。如一般情況下，重新賦值，會顯示 Uncaught TypeError: Assignment to constant variable.
 

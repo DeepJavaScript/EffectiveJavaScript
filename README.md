@@ -28,7 +28,6 @@ deepJS 讀書會的其中一本書。
 - [Item 09: Always Declare Local Variables](Chapter%202%3A%20Variable%20Scope/Item%2009%3A%20Always%20Declare%20Local%20Variables.md)
 - [Item 10: Avoid with](Chapter%202%3A%20Variable%20Scope/Item%2010%3A%20Avoid%20with.md)
 - [Item 11: Get Comfortable with Closures](Chapter%202%3A%20Variable%20Scope/Item%2011%3A%20Get%20Comfortable%20with%20Closures.md)
-- ------ 聚會進度 ------
 - [Item 12: Understand Variable Hoisting](Chapter%202%3A%20Variable%20Scope/Item%2012%3A%20Understand%20Variable%20Hoisting.md)
 - [Item 13: Use Immediately Invoked Function Expressions to Create Local Scopes](Chapter%202%3A%20Variable%20Scope/Item%2013:%20Use%20Immediately%20Invoked%20Function%20Expressions%20to%20Create%20Local%20Scopes.md)
 - [Item 14: Beware of Unportable Scoping of Named Function Expressions](Chapter%202%3A%20Variable%20Scope/Item%2014:%20Beware%20of%20Unportable%20Scoping%20of%20Named%20Function%20Expressions.md)
@@ -44,6 +43,7 @@ deepJS 讀書會的其中一本書。
 - [Item 21: Use apply to Call Functions with Different Numbers of Arguments](Chapter%203%3A%20Working%20with%20Functions/Item%2021:%20Use%20apply%20to%20Call%20Functions%20with%20Different%20Numbers%20of%20Arguments.md)
 - [Item 22: Use arguments to Create Variadic Functions](Chapter%203%3A%20Working%20with%20Functions/Item%2022%3A%20Use%20arguments%20to%20Create%20Variadic%20Functions.md)
 - [Item 23: Never Modify the arguments Object](Chapter%203%3A%20Working%20with%20Functions/Item%2023%3A%20Never%20Modify%20the%20arguments%20Object.md)
+- ------ 聚會進度 ------
 - [Item 24: Use a Variable to Save a Reference to arguments](Chapter%203%3A%20Working%20with%20Functions/Item%2024%3A%20Use%20a%20Variable%20to%20Save%20a%20Reference%20to%20arguments.md)
 - [Item 25: Use bind to Extract Methods with a Fixed Receiver](Chapter%203%3A%20Working%20with%20Functions/Item%2025%3A%20Use%20bind%20to%20Extract%20Methods%20with%20a%20Fixed%20Receiver.md)
 - [Item 26: Use bind to Curry Functions](Chapter%203%3A%20Working%20with%20Functions/Item%2026%3A%20Use%20bind%20to%20Curry%20Functions.md)
