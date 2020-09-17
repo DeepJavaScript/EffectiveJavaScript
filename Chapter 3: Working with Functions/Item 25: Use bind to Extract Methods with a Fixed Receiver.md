@@ -33,7 +33,7 @@ source.forEach(buffer.add);  // error: entries is undefined
 ```javascript
 var source = ["867", "-", "5309"];
 source.forEach(buffer.add, buffer);
-buffer.join();  // "867-5309"
+buffer.concat();  // "867-5309"
 ```
 
 如果高階函數不能自訂 callback 內的 `this`，可建立 wrapper 函數，在裡面明確的呼叫函數 (此範例是用 context object 的方式來呼叫，即 `obj.func()`，所以 `this` 為 `obj` )：
@@ -43,7 +43,7 @@ var source = ["867", "-", "5309"];
 source.forEach(function(s) {
   buffer.add(s);
 });
-buffer.join(); // "867-5309"
+buffer.concat(); // "867-5309"
 ```
 
 在 ES5 提供了 `Function#bind()`，可設定 `this` binding，並回傳新的函數：
@@ -51,5 +51,5 @@ buffer.join(); // "867-5309"
 ```javascript
 var source = ["867", "-", "5309"];
 source.forEach(buffer.add.bind(buffer));
-buffer.join(); // "867-5309"
+buffer.concat(); // "867-5309"
 ```
