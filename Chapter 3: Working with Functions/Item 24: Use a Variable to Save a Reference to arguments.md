@@ -62,7 +62,7 @@ it.next(); // 1
 function* values () {
   let i = 0;
   while (i < arguments.length) {
-    yield arguments[i++]; // wrong arguments
+    yield arguments[i++]; 
   }
 }
 ```
