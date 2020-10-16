@@ -1,8 +1,12 @@
 # 條款 29 避免非標準的堆疊查閱特性
+
 ## arguments.callee & arguments.caller
+
 在函數內部有一個特殊的對象 arguments，用以保存函數的參數。
 而 arguments 還有兩個屬性供使用，分別為 callee 以及 caller
-1. callee
+
+### 1. callee
+
 callee 指向擁有這個 arguments 的函數。
 
 階乘函數的範例：
@@ -60,7 +64,8 @@ sillyFunction();
 
 綜合多方討論，arguments.callee 會出現，(是因為早期版本的 JavaScript 不允許使用命名函數表達式)?。所以透過函式本身名字呼叫的寫法是不行的，這樣就無法做函數遞迴。因此出現 arguments.callee。但後來允許了也就不需要 arguments.callee 了。也因他有一些副作用，所以被 ES5 嚴格模式禁止了。
 
-2. caller
+### 2. caller
+
 因安全考量 arguments.caller 已經被移除了。
 雖然有些瀏覽器仍然可以使用，但仍不建議使用了。
 
@@ -91,19 +96,19 @@ start() === start; //true
 
 ```javascript
 // 創造一個堆疊追蹤紀錄
-function getCallStack() { 
+function getCallStack() {
   var stack = [];
-  for (var f = getCallStack.caller; f; f = f.caller) { 
+  for (var f = getCallStack.caller; f; f = f.caller) {
     stack.push(f);
   }
-  return stack; 
+  return stack;
 }
 
 // 並試著查閱堆疊
 function f1() {
   return getCallStack();
 }
-function f2() { 
+function f2() {
   return f1();
 }
 var trace = f2();
@@ -115,12 +120,12 @@ trace; // [f1, f2]
 所以 getCallStack 中的迴圈會不斷地查看 f。呼叫堆疊的其他部分資訊已經遺失。
 
 ```javascript
-function getCallStack() { 
+function getCallStack() {
   var stack = [];
-  for (var f = getCallStack.caller; f; f = f.caller) { 
+  for (var f = getCallStack.caller; f; f = f.caller) {
     stack.push(f);
   }
-  return stack; 
+  return stack;
 }
 
 function f(n) {
