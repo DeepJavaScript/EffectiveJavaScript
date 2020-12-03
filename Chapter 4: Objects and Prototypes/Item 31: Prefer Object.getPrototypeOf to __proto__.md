@@ -58,6 +58,19 @@ object[property_name] = set;
 
 ---
 
+```javascript
+"__proto__" in Object.create(null)
+```
+
+- false
+  - Safari 版本14.0（15610.1.28.1.9, 15610）
+  - FireFox 79.0（64 位元）
+  - FireFox 83.0（64 位元）
+  - Chrome 版本 87.0.4280.67 (正式版本) (x86_64)
+
+
+---
+
 [MDN Object.prototype.__proto__](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Object/proto)
 
 [MDN in](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/in)
