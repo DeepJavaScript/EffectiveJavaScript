@@ -15,3 +15,39 @@ JS 引擎最佳化，會因為 `__proto__` 失效，因為改變繼承結構。
 如果想要自訂原型連結的新物件，可以使用 `Object.create()` 獲得。
 
 如果沒有 ES5 的環境，可以參考 條款 33
+
+## 正確的修改 `__proto__`
+
+永遠不會正確。
+
+```javascript
+function User(name) {
+  this.name
+}
+
+function UserA(name) {
+  this.name
+}
+const u = new User('Clark');
+u.__proto__ = UserA.prototype;
+u instanceOf UserA; // false
+```
+
+`__proto__` 變成 `u` 的屬性，但原本是 setter
+
+要修改，要透過 `Object.setPrototypeOf(target, prototype)`
+
+```javascript
+function User(name) {
+  this.name
+}
+
+function UserA(name) {
+  this.name
+}
+const u = new User('Clark');
+Object.setPrototypeOf(u, UserA.prototype);
+u instanceOf UserA; // true
+```
+
+
