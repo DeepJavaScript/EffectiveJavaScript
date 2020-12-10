@@ -46,7 +46,7 @@ deepJS 讀書會的其中一本書。
 - [x] [Item 24: Use a Variable to Save a Reference to arguments](Chapter%203%3A%20Working%20with%20Functions/Item%2024%3A%20Use%20a%20Variable%20to%20Save%20a%20Reference%20to%20arguments.md)
 - [x] [Item 25: Use bind to Extract Methods with a Fixed Receiver](Chapter%203%3A%20Working%20with%20Functions/Item%2025%3A%20Use%20bind%20to%20Extract%20Methods%20with%20a%20Fixed%20Receiver.md)
 - [x] [Item 26: Use bind to Curry Functions](Chapter%203%3A%20Working%20with%20Functions/Item%2026%3A%20Use%20bind%20to%20Curry%20Functions.md)
-- [] [Item 27: Prefer Closures to Strings for Encapsulating Code](Chapter%203%3A%20Working%20with%20Functions/Item%2027%3A%20Prefer%20Closures%20to%20Strings%20for%20Encapsulating%20Code.md)
+- [x] [Item 27: Prefer Closures to Strings for Encapsulating Code](Chapter%203%3A%20Working%20with%20Functions/Item%2027%3A%20Prefer%20Closures%20to%20Strings%20for%20Encapsulating%20Code.md)
 - [x] [Item 28: Avoid Relying on the toString Method of Functions](Chapter%203%3A%20Working%20with%20Functions/Item%2028%3A%20Avoid%20Relying%20on%20the%20toString%20Method%20of%20Functions.md)
 - [x] [Item 29: Avoid Nonstandard Stack Inspection Properties](Chapter%203%3A%20Working%20with%20Functions/Item%2029%3A%20Avoid%20Nonstandard%20Stack%20Inspection%20Properties.md)
 
