@@ -1,4 +1,4 @@
-# 條款 30 了解 prototype、getPrototypeOf 與 __proto__ 之間的差異
+# 條款 30 了解 prototype、getPrototypeOf 與 `__proto__` 之間的差異
 
 ```
 Function.prototype
@@ -46,3 +46,27 @@ User  | (Function)
 > B.2.2.1 `Object.prototype.__proto__`
 >
 > B.3.1 `__proto__` Property Names in Object Initializers
+
+## constructor 沒實質的作用
+
+```javascript
+function User(name) {
+    this.name = name;
+}
+
+var chris = new User('chris')
+Object.getPrototypeOf(chris).constructor
+// ƒ User(name) {
+//     this.name = name;
+// }
+User.prototype.constructor = null
+
+var obj = new User('obj')
+Object.getPrototypeOf(obj).constructor
+// null
+```
+
+建構式被修改之後，還是可以建構出 `obj` 而它的 constructor 是 null
+
+`instanceOf` 也不會因為 constructor 修改而受影響。
+

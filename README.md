@@ -52,9 +52,9 @@ deepJS 讀書會的其中一本書。
 
 ## Chapter 4: Objects and Prototypes
 
-- [ ] [Item 30: Understand the Difference between prototype, getPrototypeOf, and__proto__](Chapter%204%3A%20Objects%20and%20Prototypes/Item%2030:%20Understand%20the%20Difference%20between%20prototype,%20getPrototypeOf,%20and__proto__.md)
-- [ ] [Item 31: Prefer Object.getPrototypeOf to __proto__](Chapter%204%3A%20Objects%20and%20Prototypes/Item%2031%3A%20Prefer%20Object.getPrototypeOf%20to%20__proto__.md)
-- [ ] [Item 32: Never Modify __proto__](Chapter%204%3A%20Objects%20and%20Prototypes/Item%2032%3A%20Never%20Modify%20__proto__.md)
+- [ ] [Item 30: Understand the Difference between prototype, getPrototypeOf, and `__proto__`](Chapter%204%3A%20Objects%20and%20Prototypes/Item%2030:%20Understand%20the%20Difference%20between%20prototype,%20getPrototypeOf,%20and__proto__.md)
+- [ ] [Item 31: Prefer Object.getPrototypeOf to `__proto__`](Chapter%204%3A%20Objects%20and%20Prototypes/Item%2031%3A%20Prefer%20Object.getPrototypeOf%20to%20__proto__.md)
+- [ ] [Item 32: Never Modify `__proto__`](Chapter%204%3A%20Objects%20and%20Prototypes/Item%2032%3A%20Never%20Modify%20__proto__.md)
 - [ ] [Item 33: Make Your Constructors new-Agnostic](Chapter%204%3A%20Objects%20and%20Prototypes/Item%2033%3A%20Make%20Your%20Constructors%20new-Agnostic.md)
 - [ ] [Item 34: Store Methods on Prototypes](Chapter%204%3A%20Objects%20and%20Prototypes/Item%2034%3A%20Store%20Methods%20on%20Prototypes.md)
 - [ ] [Item 35: Use Closures to Store Private Data](Chapter%204%3A%20Objects%20and%20Prototypes/Item%2035%3A%20Use%20Closures%20to%20Store%20Private%20Data.md)

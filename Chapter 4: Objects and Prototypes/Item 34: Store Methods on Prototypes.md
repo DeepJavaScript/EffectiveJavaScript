@@ -45,3 +45,7 @@ var user2 = new User('B', 'b01913');
 你可能會想放在 instance 上可以最佳化方法查找 (lookup) 的速度，例如：`user1.toString()` 不需要搜尋原型鏈來找到 `toString`。但現代 JS 引擎已優化原型查找的動作，所以將方法複製到 instance 上不會提升效能，反而會佔用更多記憶體。
 
 因此，簡易將重複的方法放在 prototype 上，讓 instance 共用。
+
+## 結論
+
+用 Class 就對了。

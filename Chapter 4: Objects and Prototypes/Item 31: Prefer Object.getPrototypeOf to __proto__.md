@@ -1,8 +1,8 @@
 
-# 條款 31 優先選用 Object.getPrototypeOf 而非 __proto__
+# 條款 31 優先選用 Object.getPrototypeOf 而非 `__proto__`
 
 >`__proto__` 它的存在和確切行為僅在 ECMAScript 2015 規範中被標準化為一項傳統功能。
-優先選用符合標準的 Object.getPrototypeOf，而非 __proto__ 這個非標準特性。
+優先選用符合標準的 Object.getPrototypeOf，而非 `__proto__` 這個非標準特性。
 >> `Object.getPrototypeOf()`方法返回指定物件的原型，等同公開 **([[Prototype]])**。
 
 註： dunder 為 Double Underscore 的縮寫。
@@ -62,12 +62,26 @@ object[property_name] = set;
 "__proto__" in Object.create(null)
 ```
 
-- false
+- return false
   - Safari 版本14.0（15610.1.28.1.9, 15610）
   - FireFox 79.0（64 位元）
   - FireFox 83.0（64 位元）
   - Chrome 版本 87.0.4280.67 (正式版本) (x86_64)
 
+## `Object.getPrototypeOf()` 取得的 prototype 還是可以被改到
+
+```javascript
+function User(name) {
+    this.name = name;
+}
+undefined
+var obj = new User('obj')
+// undefined
+Object.getPrototypeOf(obj).constructor = null
+// null
+User.prototype
+// {constructor: null}
+```
 
 ---
 
