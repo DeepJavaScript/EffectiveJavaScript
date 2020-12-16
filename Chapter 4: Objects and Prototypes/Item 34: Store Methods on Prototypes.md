@@ -1,6 +1,8 @@
 # 條款 34 將方法儲存在原型上
 
-在 instance 上定義方法成員和資料成員，所以各 instance 都有各自的方法 (雖然行為一樣)：
+## 在 instance 上定義方法
+
+在 instance 上定義成員方法和成員資料，所以各 instance 都有各自的方法 (雖然行為一樣)：
 
 ```javascript
 function User(name, passwordHash) {
@@ -20,6 +22,8 @@ var user3 = new User('C', '8ec64b');
 ```
 
 ![](https://i.imgur.com/fDVC1TH.png)
+
+## 在 prototype 上定義方法
 
 在 prototype 上定義方法，藉由 prototype 來共用方法，所有 instance 都可以存取到，不用在每個 instance 上重複複製多份的方法和 property：
 
@@ -48,4 +52,12 @@ var user2 = new User('B', 'b01913');
 
 ## 結論
 
-用 Class 就對了。
+- 好的做法
+  - method 放在 prototype
+  - property 放在 instance
+  - 優點
+    - 方法共用: 節省記憶體空間
+- 疑慮
+  - 原型查找 method 會不會降低效能？
+    - 不會，現代 JS 引擎的最佳化已經搞定
+- 新方法: 用 Class 就對了。
