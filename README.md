@@ -11,6 +11,11 @@ deepJS 讀書會的其中一本書。
 - [英文原文官網](http://effectivejs.com/)
 - [原文戡誤表](https://github.com/effectivejs/site/wiki/Errata)
 
+## Effective 後來的 JavaScript
+
+- [Effective ES6](https://www2.slideshare.net/teppeis/effective-es6)
+- [從ECMAScript看語言約束](https://www.ithome.com.tw/voice/89425)
+- [An Effective Guide to Modern JavaScript: (ECMAScript 2017 / ES8)](https://www.amazon.com/Effective-Guide-Modern-JavaScript-ECMAScript/dp/1974207927)
 
 ## Chapter 1: Accustoming Yourself to JavaScript
 
