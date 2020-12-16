@@ -1,5 +1,10 @@
 # 條款 09 總是宣告區域變數
 
+**戡誤**
+
+    Item 9
+    Note that accidental creation of globals is prevented in ES5 strict mode, because assigning to an unbound variable is an error and throws an exception. (Leaving off a var can still lead to nasty bugs if the variable name happens to coincide with a variable that already exists in an outer scope.)
+
 ## 摘要
 
 1. 總是使用 var 來宣告新的區域變數

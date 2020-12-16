@@ -1,5 +1,10 @@
 # 條款 25 使用 bind 擷取出具有固定接收者的方法
 
+**戡誤**
+
+    Item 25
+    There three code examples that call buffer.join() but they should call buffer.concat(). (reported by Brad Jesness)
+
 書中說的「固定接收者 (fixed receiver)」即為 `this` binding。
 
 有一種作法是將物件內的方法，作為 callback 傳入高階函數來呼叫。在呼叫該 callback 時，  `this` 可能不是該方法的 context object。

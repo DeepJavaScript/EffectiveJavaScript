@@ -1,5 +1,11 @@
 # 條款 06 了解分號插入的限制
 
+**戡誤**
+
+    Item 6
+    The Point example shouldn't use a truthiness test to initialize its x and y fields, as Item 54 recommends.
+
+
 要擔心的太多了，乾脆都不要省略分號就好啦 ！！！
 but ！！
 JavaScript 會強制加入分號！！
@@ -24,12 +30,12 @@ function foo() {
 
 一或多個 newlines (換行)之後。
 ```javascript
-var a 
-    b = 
+var a
+    b =
     3;
 
 var a;
-    b = 
+    b =
     3;
 ```
 
@@ -71,7 +77,7 @@ function foo(x) {
 若在 regex 的前面接著沒有以分號為結尾的賦值陳述句，原本 regex 的 `/` 就會變成除法運算子：
 
 ```javascript
-a = b 
+a = b
 / Error / i.test(str) && fail();
 
 // 解析後：
