@@ -2,8 +2,9 @@
 
 **戡誤**
 
-    Item 37
-    According to the page "This seemingly simple code has a major but subtle bug: The callback passed to lines.map refers to this, expecting to extract the regexp property of the CSVReader object. But map binds its callback's receiver to the lines array, which has no such property." However, if the second parameter of map is not in use, the global object (in this case window) associated with callback will be used instead, and not the lines array. (reported by Tan Gek Hua)
+    Item 37 (已戡誤)
+    According to the page "This seemingly simple code has a major but subtle bug: The callback passed to lines.map refers to this, expecting to extract the regexp property of the CSVReader object. But map binds its callback's receiver to the lines array, which has no such property."
+    However, if the second parameter of map is not in use, the global object (in this case window) associated with callback will be used instead, and not the lines array. (reported by Tan Gek Hua)
 
 
 ## 問題
@@ -43,6 +44,9 @@ return lines.map(function (line) {
 }, this);  // 第二參數
 //...
 ```
+
+在此的 this 由 `reader.read()` 決定成 reader 的 instance。
+若 read() 換成另種呼叫方式， this 則會改變，也許會造成此方法出錯。
 
 ### 2. 用變數暫存 `this`
 
