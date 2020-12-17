@@ -1,5 +1,10 @@
 # 條款 07 把字串想成是 16 位元編碼單位的序列
 
+**戡誤**
+
+    Item 7
+    Page 27, Paragraph 3, 1st Sentence: "16-byte" should be "16-bit" (reported by Lon Ingram)
+
 - JS 的字串是由 16 位元的 code units 所構成，而不是 Unicode 的 code points 所構成
 - Unicode 第 2<sup>16</sup> 個和以上的 code points 在 JS 中是以兩個 code units 來表示，稱為一個 surrogate pair
 - surrogate pair 會使字串元素的計數出錯，會影響 `length`、`charAt`、`charCodeAt` 和 regex pattern，例如：`.`

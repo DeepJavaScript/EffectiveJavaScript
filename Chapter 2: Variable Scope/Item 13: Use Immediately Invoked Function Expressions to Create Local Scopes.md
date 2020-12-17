@@ -1,5 +1,13 @@
 # 條款 13 使用即刻調用的函式運算式來建立區域範疇
 
+**戡誤**
+
+    Item 13
+    "But as always, the variable declarations are hoisted to the top of the loop."
+
+    I believe this should be: "to the top of the function."
+
+
 IIFE 唸 "iffy"
 
 ```javascript
@@ -14,11 +22,11 @@ function wrapElements(a){
 }
 
 var wrapped = wrapElements([10, 20 ,30 ,40 ,50]);
-var f = wrapped[0]; 
+var f = wrapped[0];
 f() // undefined
 ```
 
-- 程式執行時期 (runtime) 進入到一個範疇 (scope) 時，會為該範疇內的每一個變數繫結 (variable binding) 都在記憶體中配置一個「位置」(slot)。  (如果區塊範疇沒有宣告，也就不會有繫結的行為，而是參考外層區塊的變數記憶體位置。) 
+- 程式執行時期 (runtime) 進入到一個範疇 (scope) 時，會為該範疇內的每一個變數繫結 (variable binding) 都在記憶體中配置一個「位置」(slot)。  (如果區塊範疇沒有宣告，也就不會有繫結的行為，而是參考外層區塊的變數記憶體位置。)
 - wrapElements 函式繫結三個區域變數：result、i 以及 n。在這個迴圈的每次迭代動作中，迴圈主體會為嵌套函式配置一個 closure。
 - 巢狀函式被建立時，儲存的是對 i 的一個參考 (reference)，而不是當下值。既然 i 的值會在每個函式被建立之後改變，那些內層函式所看見的會是 i 的最終值。這就是閉包 (closures) 的關鍵所在：
 
@@ -39,7 +47,7 @@ function wrapElements(a){
 }
 
 var wrapped = wrapElements([10, 20 ,30 ,40 ,50]);
-var f = wrapped[0]; 
+var f = wrapped[0];
 f() // 10
 ```
 或是把 ｊ的值透過引數傳入：
@@ -57,7 +65,7 @@ function wrapElements(a){
 }
 
 var wrapped = wrapElements([10, 20 ,30 ,40 ,50]);
-var f = wrapped[0]; 
+var f = wrapped[0];
 f() // 10
 ```
 用立即函式來建立一個區域範疇，並且立即呼叫的話，可以讓內部的變數是當下的值，而不是參考外部的值。

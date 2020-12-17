@@ -1,5 +1,10 @@
 # 條款 25 使用 bind 擷取出具有固定接收者的方法
 
+**戡誤**
+
+    Item 25
+    There three code examples that call buffer.join() but they should call buffer.concat(). (reported by Brad Jesness)
+
 書中說的「固定接收者 (fixed receiver)」即為 `this` binding。
 
 有一種作法是將物件內的方法，作為 callback 傳入高階函數來呼叫。在呼叫該 callback 時，  `this` 可能不是該方法的 context object。
@@ -33,7 +38,7 @@ source.forEach(buffer.add);  // error: entries is undefined
 ```javascript
 var source = ["867", "-", "5309"];
 source.forEach(buffer.add, buffer);
-buffer.join();  // "867-5309"
+buffer.concat();  // "867-5309"
 ```
 
 如果高階函數不能自訂 callback 內的 `this`，可建立 wrapper 函數，在裡面明確的呼叫函數 (此範例是用 context object 的方式來呼叫，即 `obj.func()`，所以 `this` 為 `obj` )：
@@ -43,7 +48,7 @@ var source = ["867", "-", "5309"];
 source.forEach(function(s) {
   buffer.add(s);
 });
-buffer.join(); // "867-5309"
+buffer.concat(); // "867-5309"
 ```
 
 在 ES5 提供了 `Function#bind()`，可設定 `this` binding，並回傳新的函數：
@@ -51,5 +56,5 @@ buffer.join(); // "867-5309"
 ```javascript
 var source = ["867", "-", "5309"];
 source.forEach(buffer.add.bind(buffer));
-buffer.join(); // "867-5309"
+buffer.concat(); // "867-5309"
 ```

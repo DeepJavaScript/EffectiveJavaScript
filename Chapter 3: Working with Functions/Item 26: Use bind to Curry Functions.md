@@ -110,3 +110,9 @@ const addDeliveryFee = (b) => {
 1. Currying：https://zh.wikipedia.org/wiki/%E6%9F%AF%E9%87%8C%E5%8C%96
 2. Bind：https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Function/bind
 3. Wrapper Functions：https://www.cnblogs.com/rubylouvre/archive/2009/11/14/1602993.html
+
+
+**戡誤**
+
+    Item 26
+    Page 75, 1st paragraph: The technique described is "partial application", not "currying".

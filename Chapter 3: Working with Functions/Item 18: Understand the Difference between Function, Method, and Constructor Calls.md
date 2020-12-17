@@ -1,4 +1,11 @@
 # 條款 18 了解函式呼叫、方法呼叫以及建構式呼叫之間的差異
+
+**戡誤**
+
+    Item 18
+    Page 57, Paragraph 4: "binds the name parameter" should be "binds the username parameter"
+    Page 59, Paragraph 1, 1st Sentence: "has no property called name" should be "has no property called username". (reported by Stein Magnus Jodal)
+
 > 在 JavaScript 中，單是函式這個功能，就能夠扮演其他程式語言以多個不同名稱實現的角色，程序(procedures)、方法(methods)、建構式(constructors)，甚至是類別(classes)或模組(modules)。一旦你熟悉函式豐富又細膩之處，並且能夠熟練地運用它們，你就已經精通了絕大部分的 Javascript。
 
 ❓ 疑惑其他語言的狀況？
@@ -12,14 +19,14 @@
 以上述五個功能來說，都是各自獨立的功能，但 JS 可以統一以函式來理解處理。
 以 class 中的 constructors 為例，其他語言的 constructors 是黑盒子，沒辦法看到內部情況，但 JS 的 constructors 就是函式，可以自訂內容。
 
---- 
+---
 
 ## 函式、方法與類別在 JS 中是函式的三種使用方式
 
 ### 用途一：函式呼叫
 
 ```javascript
-function hello(username) { 
+function hello(username) {
   return "hello, " + username;
 }
 hello("Keyser Söze"); // "hello, Keyser Söze"
@@ -59,23 +66,23 @@ obj2.hello(); //"hello,Hans Gruber"
 
 - obj2.hello() 會去查找 obj2 的 hello 特性(在此這個特性剛好是與 obj1.hello 相同的函式)，不過是以 obj2 為接收者來呼叫他
 - 在一個物件上呼叫一個方法，就會在那個物件上查找那個方法，然後使用該物件作為方法的接收者。
-  
+
 那麼接下來讓一個普通函式提及 this，並讓多個物件共用它
 
 ```javascript
 function hello() {
   return "hello, " + this.username;
-} 
+}
 
-var obj1 = { 
+var obj1 = {
   hello: hello,
-  username: "Gordon Gekko" 
+  username: "Gordon Gekko"
 };
 obj1.hello(); // "hello, Gordon Gekko"
 
-var obj2 = { 
+var obj2 = {
   hello: hello,
-  username: "Biff Tannen" 
+  username: "Biff Tannen"
   };
 obj2.hello(); // "hello, Biff Tannen"
 ```
@@ -90,21 +97,21 @@ hello() // "hello,undefined"
 - ES5 strict 模式會把 this 的預設繫結設為 undefined
 
 ```javascript
-function hello() { 
+function hello() {
   "use strict";
-  return "hello, " + this.username; 
+  return "hello, " + this.username;
   }
 hello(); // error: cannot read property "username" of undefined
 ```
 
---- 
+---
 
 ### 用途三：建構式
 - 建構式一樣使用 function 來定義，名稱上一般會以首字大寫來定義
 
 ```javascript
-function User(name, passwordHash) { 
-  this.name = name; 
+function User(name, passwordHash) {
+  this.name = name;
   this.passwordHash = passwordHash;
 }
 ```

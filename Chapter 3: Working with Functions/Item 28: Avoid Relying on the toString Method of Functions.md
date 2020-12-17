@@ -11,3 +11,25 @@
   return x + 1
 }).bind(16).toString()
 ```
+
+### ECMAScript 2019 定義了 Function.prototype.toString()
+
+**19.2.3.5 Function.prototype.toString ( )**
+
+當 `toString` method 被呼叫，會執行下面的步驟:
+
+1. 把 func 放進 `this` 值
+1. 若 func 是內建的 function 物件，就會回傳一個表示定義實作 func 的原始碼 String。這個表示形式必須有 NativeFunction 的語法。另外，若 func 有一個 `[[InitialName]]` internal slot 和 `func.[[InitialName]]` 是一個 String, 回傳的 String 必須是符合 func 的 NativeFunctionAccessor(opt) PropertyName 值的一部份
+1. 如果 Type(func) 是一個 Object 並且 func 是一個 `[[SourceText]]` internal slot 和 `func.[[SourceText]]` 是一個。Unicode code points 的序列化，而且 `!HostHasSourceTextAvailable(func) ` 是 `true`，回傳 `!CodePointsToString(func.[[SourceText]])`
+1. 如果 Type(func) 是一個 Object 並且 `IsCallable(func)` 是 `true`，就會回傳一個表示定義實作 func 的原始碼 String。這會表示成 NativeFunction 的語法。
+1. Throw 一個 TypeError 例外。
+
+
+NativeFunction:
+
+- **function** NativeFunctionAccessor(opt) PropertyName`[~Yield, ~Await]`(opt) **(** FormalParameters`[~Yield, ~Await]` **) { [nativecode] }**
+
+NativeFunctionAccessor:
+
+- **get**
+- **set**

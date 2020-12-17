@@ -1,6 +1,5 @@
 # 條款 23 永不修改 arguments 物件
 
-
 - 不要修改 `arguments` 物件
 - 將 argument 物件轉成真的陣列的方式請使用: `[].slice.call(arguments)`
 
@@ -8,14 +7,14 @@
 
 擁有 length 的屬性，以及從 0 開始的索引，但是並不具有陣列應該有的方法。
 
-```javascript=
+```javascript
 function callMethod(obj, method) {
-    var shift = [].shift;
-    shift.call(arguments);
-    shift.call(arguments);
-    console.log(arguments);
-    // obj[method]: 17[25], undefined
-    return obj[method].apply(obj, arguments);
+  var shift = [].shift;
+  shift.call(arguments);
+  shift.call(arguments);
+  console.log(arguments);
+  // obj[method]: 17[25], undefined
+  return obj[method].apply(obj, arguments);
 }
 var obj = { add: function(x, y) {  return x + y } }
 callMethod(obj, 'add', 17 ,25);
