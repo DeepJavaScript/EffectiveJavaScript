@@ -64,12 +64,12 @@ deepJS 讀書會的其中一本書。
 - [x] [Item 34: Store Methods on Prototypes](Chapter%204%3A%20Objects%20and%20Prototypes/Item%2034%3A%20Store%20Methods%20on%20Prototypes.md)
 - [x] [Item 35: Use Closures to Store Private Data](Chapter%204%3A%20Objects%20and%20Prototypes/Item%2035%3A%20Use%20Closures%20to%20Store%20Private%20Data.md)
 - [x] [Item 36: Store Instance State Only on Instance Objects](Chapter%204%3A%20Objects%20and%20Prototypes/Item%2036%3A%20Store%20Instance%20State%20Only%20on%20Instance%20Objects.md)
-- [ ] [Item 37: Recognize the Implicit Binding of this](Chapter%204%3A%20Objects%20and%20Prototypes/Item%2037%3A%20Recognize%20the%20Implicit%20Binding%20of%20this.md)
-- [ ] [Item 38: Call Superclass Constructors from Subclass Constructors](Chapter%204%3A%20Objects%20and%20Prototypes/Item%2038:%20Call%20Superclass%20Constructors%20from%20Subclass%20Constructors.md)
-- [ ] [Item 39: Never Reuse Superclass Property Names](Chapter%204%3A%20Objects%20and%20Prototypes/Item%2039%3A%20Never%20Reuse%20Superclass%20Property%20Names.md)
-- [ ] [Item 40: Avoid Inheriting from Standard Classes](Chapter%204%3A%20Objects%20and%20Prototypes/Item%2040%3A%20Avoid%20Inheriting%20from%20Standard%20Classes.md)
-- [ ] [Item 41: Treat Prototypes As an Implementation Detail](Chapter%204%3A%20Objects%20and%20Prototypes/Item%2041%3A%20Treat%20Prototypes%20As%20an%20Implementation%20Detail.md)
-- [ ] [Item 42: Avoid Reckless Monkey-Patching](Chapter%204%3A%20Objects%20and%20Prototypes/Item%2042%3A%20Avoid%20Reckless%20Monkey-Patching.md)
+- [x] [Item 37: Recognize the Implicit Binding of this](Chapter%204%3A%20Objects%20and%20Prototypes/Item%2037%3A%20Recognize%20the%20Implicit%20Binding%20of%20this.md)
+- [x] [Item 38: Call Superclass Constructors from Subclass Constructors](Chapter%204%3A%20Objects%20and%20Prototypes/Item%2038:%20Call%20Superclass%20Constructors%20from%20Subclass%20Constructors.md)
+- [x] [Item 39: Never Reuse Superclass Property Names](Chapter%204%3A%20Objects%20and%20Prototypes/Item%2039%3A%20Never%20Reuse%20Superclass%20Property%20Names.md)
+- [x] [Item 40: Avoid Inheriting from Standard Classes](Chapter%204%3A%20Objects%20and%20Prototypes/Item%2040%3A%20Avoid%20Inheriting%20from%20Standard%20Classes.md)
+- [x] [Item 41: Treat Prototypes As an Implementation Detail](Chapter%204%3A%20Objects%20and%20Prototypes/Item%2041%3A%20Treat%20Prototypes%20As%20an%20Implementation%20Detail.md)
+- [x] [Item 42: Avoid Reckless Monkey-Patching](Chapter%204%3A%20Objects%20and%20Prototypes/Item%2042%3A%20Avoid%20Reckless%20Monkey-Patching.md)
 
 ## Chapter 5: Arrays and Dictionaries
 

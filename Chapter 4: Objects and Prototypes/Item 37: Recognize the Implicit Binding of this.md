@@ -80,6 +80,27 @@ return lines.map(line => {
 //...
 ```
 
+### 5. 也可以用閉包 closure 處理
+
+```javascript
+function CSVReader (separators) {
+  this.separators = separators || [","];
+  this.regexp = new RegExp(this.separators.map(function (sep) {
+    return "\\" + sep[0];
+  }).join("|"));
+}
+
+// 用 closure 閉包儲存 regexp
+function split (regexp){
+  return function(line) {
+    return line.split(regexp);
+  }
+}
+CSVReader.prototype.read = function (str) {
+  var lines = str.trim().split(/\n/);
+  return lines.map(split(this.regexp));
+};
+```
 
 ## this 是一種 runtime 的產物。
 
