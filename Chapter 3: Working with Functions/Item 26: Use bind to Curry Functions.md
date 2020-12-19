@@ -1,5 +1,10 @@
 # 條款 26 使用 bind 建立 Curry 函式
 
+**戡誤**
+
+    Item 26
+    Page 75, 1st paragraph: The technique described is "partial application", not "currying".
+
 ## Curry Function 柯里函式
 
 一個函式柯里化的過程就是**把接受多個參數的函式，變換成接受一個單一參數的函式，並且返回接受餘下的參數而且返回結果的新函式的技術。**
@@ -111,8 +116,3 @@ const addDeliveryFee = (b) => {
 2. Bind：https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Function/bind
 3. Wrapper Functions：https://www.cnblogs.com/rubylouvre/archive/2009/11/14/1602993.html
 
-
-**戡誤**
-
-    Item 26
-    Page 75, 1st paragraph: The technique described is "partial application", not "currying".

@@ -31,3 +31,4 @@ class List extends Array {
 ```
 
 這樣繼承 Array 的話 length 不會出錯。
+

@@ -137,3 +137,26 @@ var trace = f(1); // 無限迴圈
 堆疊查閱功能是非標準的，移植性不高，應用層面也不廣。
 在 ES5 strict mode 是被禁止的。
 最好的策略是禁止使用堆疊查閱功能，如果目的是為了除錯，那就使用互動式的除錯器即可。
+
+## 最後的實作
+
+```javascript
+function level1 () {
+    console.log("level 1:", arguments.callee?.name, level1.caller?.name);
+    level2();
+}
+
+function level2 () {
+    console.log("level 2:", arguments.callee?.name, level2.caller?.name);
+    level3();
+}
+
+function level3 () {
+    console.log("level 3:", arguments.callee?.name, level3.caller?.name);
+}
+
+level1()
+// level 1: level1 undefined
+// level 2: level2 level1
+// level 3: level3 level2
+```
