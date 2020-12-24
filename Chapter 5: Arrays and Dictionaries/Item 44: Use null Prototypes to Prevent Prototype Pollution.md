@@ -27,6 +27,8 @@ var x = Object.setPrototypeOf({}, null)
 Object.getPrototypeOf(x) === null // true
 ```
 
+> ES6 才有 `Object.setPrototypeOf()`
+
 ES5 出現可以指定物件原型的標準語法 `Object.create()` 可以指定物件原型
 
 不推薦的非標準做法 `__proto__`
