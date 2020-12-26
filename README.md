@@ -73,12 +73,12 @@ deepJS 讀書會的其中一本書。
 
 ## Chapter 5: Arrays and Dictionaries
 
-- [ ] [Item 43: Build Lightweight Dictionaries from Direct Instances of Object](Chapter%205%3A%20Arrays%20and%20Dictionaries/Item%2043:%20Build%20Lightweight%20Dictionaries%20from%20Direct%20Instances%20of%20Object.md)
-- [ ] [Item 44: Use null Prototypes to Prevent Prototype Pollution](Chapter%205%3A%20Arrays%20and%20Dictionaries/Item%2044%3A%20Use%20null%20Prototypes%20to%20Prevent%20Prototype%20Pollution.md)
-- [ ] [Item 45: Use hasOwnProperty to Protect Against Prototype Pollution](Chapter%205%3A%20Arrays%20and%20Dictionaries/Item%2045:%20Use%20hasOwnProperty%20to%20Protect%20Against%20Prototype%20Pollution.md)
-- [ ] [Item 46: Prefer Arrays to Dictionaries for Ordered Collections](Chapter%205%3A%20Arrays%20and%20Dictionaries/Item%2046:%20Prefer%20Arrays%20to%20Dictionaries%20for%20Ordered%20Collections.md)
-- [ ] [Item 47: Never Add Enumerable Properties to Object.prototype](Chapter%205%3A%20Arrays%20and%20Dictionaries/Item%2047%3A%20Never%20Add%20Enumerable%20Properties%20to%20Object.prototype.md)
-- [ ] [Item 48: Avoid Modifying an Object during Enumeration](Chapter%205%3A%20Arrays%20and%20Dictionaries/Item%2048%3A%20Avoid%20Modifying%20an%20Object%20during%20Enumeration.md)
+- [x] [Item 43: Build Lightweight Dictionaries from Direct Instances of Object](Chapter%205%3A%20Arrays%20and%20Dictionaries/Item%2043:%20Build%20Lightweight%20Dictionaries%20from%20Direct%20Instances%20of%20Object.md)
+- [x] [Item 44: Use null Prototypes to Prevent Prototype Pollution](Chapter%205%3A%20Arrays%20and%20Dictionaries/Item%2044%3A%20Use%20null%20Prototypes%20to%20Prevent%20Prototype%20Pollution.md)
+- [x] [Item 45: Use hasOwnProperty to Protect Against Prototype Pollution](Chapter%205%3A%20Arrays%20and%20Dictionaries/Item%2045:%20Use%20hasOwnProperty%20to%20Protect%20Against%20Prototype%20Pollution.md)
+- [x] [Item 46: Prefer Arrays to Dictionaries for Ordered Collections](Chapter%205%3A%20Arrays%20and%20Dictionaries/Item%2046:%20Prefer%20Arrays%20to%20Dictionaries%20for%20Ordered%20Collections.md)
+- [x] [Item 47: Never Add Enumerable Properties to Object.prototype](Chapter%205%3A%20Arrays%20and%20Dictionaries/Item%2047%3A%20Never%20Add%20Enumerable%20Properties%20to%20Object.prototype.md)
+- [x] [Item 48: Avoid Modifying an Object during Enumeration](Chapter%205%3A%20Arrays%20and%20Dictionaries/Item%2048%3A%20Avoid%20Modifying%20an%20Object%20during%20Enumeration.md)
 - [ ] [Item 49: Prefer for Loops to for...in Loops for Array Iteration](Chapter%205%3A%20Arrays%20and%20Dictionaries/Item%2049%3A%20Prefer%20for%20Loops%20to%20for...in%20Loops%20for%20Array%20Iteration.md)
 - [ ] [Item 50: Prefer Iteration Methods to Loops](Chapter%205%3A%20Arrays%20and%20Dictionaries/Item%2050%3A%20Prefer%20Iteration%20Methods%20to%20Loops.md)
 - [ ] [Item 51: Reuse Generic Array Methods on Array-Like Objects](Chapter%205%3A%20Arrays%20and%20Dictionaries/Item%2051%3A%20Reuse%20Generic%20Array%20Methods%20on%20Array-Like%20Objects.md)
