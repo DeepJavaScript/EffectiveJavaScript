@@ -14,3 +14,12 @@
 
     reported by Hemant Singal
 
+
+```javascript
+var a = new Array(); // 不可靠
+var b = []; // 可靠
+```
+
+因為原型鍊會有被修改的風險，同理 constructor 也有被修改的風險，而字面值完全不會有被修改的風險。
+
+所以字面值可以保證你獲得你想要的型別，而 constructor 不保證。
