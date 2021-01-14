@@ -79,7 +79,7 @@ deepJS 讀書會的其中一本書。
 - [x] [Item 46: Prefer Arrays to Dictionaries for Ordered Collections](Chapter%205%3A%20Arrays%20and%20Dictionaries/Item%2046:%20Prefer%20Arrays%20to%20Dictionaries%20for%20Ordered%20Collections.md)
 - [x] [Item 47: Never Add Enumerable Properties to Object.prototype](Chapter%205%3A%20Arrays%20and%20Dictionaries/Item%2047%3A%20Never%20Add%20Enumerable%20Properties%20to%20Object.prototype.md)
 - [x] [Item 48: Avoid Modifying an Object during Enumeration](Chapter%205%3A%20Arrays%20and%20Dictionaries/Item%2048%3A%20Avoid%20Modifying%20an%20Object%20during%20Enumeration.md)
-- [ ] [Item 49: Prefer for Loops to for...in Loops for Array Iteration](Chapter%205%3A%20Arrays%20and%20Dictionaries/Item%2049%3A%20Prefer%20for%20Loops%20to%20for...in%20Loops%20for%20Array%20Iteration.md)
+- [x] [Item 49: Prefer for Loops to for...in Loops for Array Iteration](Chapter%205%3A%20Arrays%20and%20Dictionaries/Item%2049%3A%20Prefer%20for%20Loops%20to%20for...in%20Loops%20for%20Array%20Iteration.md)
 - [ ] [Item 50: Prefer Iteration Methods to Loops](Chapter%205%3A%20Arrays%20and%20Dictionaries/Item%2050%3A%20Prefer%20Iteration%20Methods%20to%20Loops.md)
 - [ ] [Item 51: Reuse Generic Array Methods on Array-Like Objects](Chapter%205%3A%20Arrays%20and%20Dictionaries/Item%2051%3A%20Reuse%20Generic%20Array%20Methods%20on%20Array-Like%20Objects.md)
 - [ ] [Item 52: Prefer Array Literals to the Array Constructor](Chapter%205%3A%20Arrays%20and%20Dictionaries/Item%2052%3A%20Prefer%20Array%20Literals%20to%20the%20Array%20Constructor.md)
