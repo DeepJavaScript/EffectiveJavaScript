@@ -35,3 +35,5 @@ myFun(1, 2)     // true
 myFun(1, 2, 3)  // true
 ```
 
+除了函式裡的 `arguments` 是類陣列之外，使用 `document.getElementsByTagName` 等方法取得的 Node List，也是類陣列。
+

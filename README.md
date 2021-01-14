@@ -79,15 +79,15 @@ deepJS 讀書會的其中一本書。
 - [x] [Item 46: Prefer Arrays to Dictionaries for Ordered Collections](Chapter%205%3A%20Arrays%20and%20Dictionaries/Item%2046:%20Prefer%20Arrays%20to%20Dictionaries%20for%20Ordered%20Collections.md)
 - [x] [Item 47: Never Add Enumerable Properties to Object.prototype](Chapter%205%3A%20Arrays%20and%20Dictionaries/Item%2047%3A%20Never%20Add%20Enumerable%20Properties%20to%20Object.prototype.md)
 - [x] [Item 48: Avoid Modifying an Object during Enumeration](Chapter%205%3A%20Arrays%20and%20Dictionaries/Item%2048%3A%20Avoid%20Modifying%20an%20Object%20during%20Enumeration.md)
-- [ ] [Item 49: Prefer for Loops to for...in Loops for Array Iteration](Chapter%205%3A%20Arrays%20and%20Dictionaries/Item%2049%3A%20Prefer%20for%20Loops%20to%20for...in%20Loops%20for%20Array%20Iteration.md)
-- [ ] [Item 50: Prefer Iteration Methods to Loops](Chapter%205%3A%20Arrays%20and%20Dictionaries/Item%2050%3A%20Prefer%20Iteration%20Methods%20to%20Loops.md)
-- [ ] [Item 51: Reuse Generic Array Methods on Array-Like Objects](Chapter%205%3A%20Arrays%20and%20Dictionaries/Item%2051%3A%20Reuse%20Generic%20Array%20Methods%20on%20Array-Like%20Objects.md)
-- [ ] [Item 52: Prefer Array Literals to the Array Constructor](Chapter%205%3A%20Arrays%20and%20Dictionaries/Item%2052%3A%20Prefer%20Array%20Literals%20to%20the%20Array%20Constructor.md)
+- [x] [Item 49: Prefer for Loops to for...in Loops for Array Iteration](Chapter%205%3A%20Arrays%20and%20Dictionaries/Item%2049%3A%20Prefer%20for%20Loops%20to%20for...in%20Loops%20for%20Array%20Iteration.md)
+- [x] [Item 50: Prefer Iteration Methods to Loops](Chapter%205%3A%20Arrays%20and%20Dictionaries/Item%2050%3A%20Prefer%20Iteration%20Methods%20to%20Loops.md)
+- [x] [Item 51: Reuse Generic Array Methods on Array-Like Objects](Chapter%205%3A%20Arrays%20and%20Dictionaries/Item%2051%3A%20Reuse%20Generic%20Array%20Methods%20on%20Array-Like%20Objects.md)
+- [x] [Item 52: Prefer Array Literals to the Array Constructor](Chapter%205%3A%20Arrays%20and%20Dictionaries/Item%2052%3A%20Prefer%20Array%20Literals%20to%20the%20Array%20Constructor.md)
 
 ## Chapter 6: Library and API Design
 
-- [ ] [Item 53: Maintain Consistent Conventions](Chapter%206%3A%20Library%20and%20API%20Design/Item%2053%3A%20Maintain%20Consistent%20Conventions.md)
-- [ ] [Item 54: Treat undefined AsNo Value](Chapter%206%3A%20Library%20and%20API%20Design/Item%2054%3A%20Treat%20undefined%20AsNo%20Value.md)
+- [x] [Item 53: Maintain Consistent Conventions](Chapter%206%3A%20Library%20and%20API%20Design/Item%2053%3A%20Maintain%20Consistent%20Conventions.md)
+- [x] [Item 54: Treat undefined AsNo Value](Chapter%206%3A%20Library%20and%20API%20Design/Item%2054%3A%20Treat%20undefined%20AsNo%20Value.md)
 - [ ] [Item 55: Accept Options Objects for Keyword Arguments ](Chapter%206%3A%20Library%20and%20API%20Design/Item%2055%3A%20Accept%20Options%20Objects%20for%20Keyword%20Arguments%20.md)
 - [ ] [Item 56: Avoid Unnecessary State](Chapter%206%3A%20Library%20and%20API%20Design/Item%2056%3A%20Avoid%20Unnecessary%20State.md)
 - [ ] [Item 57: Use Structural Typing for Flexible Interfaces](Chapter%206%3A%20Library%20and%20API%20Design/Item%2057%3A%20Use%20Structural%20Typing%20for%20Flexible%20Interfaces.md)
