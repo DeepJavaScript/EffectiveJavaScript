@@ -88,11 +88,11 @@ deepJS 讀書會的其中一本書。
 
 - [x] [Item 53: Maintain Consistent Conventions](Chapter%206%3A%20Library%20and%20API%20Design/Item%2053%3A%20Maintain%20Consistent%20Conventions.md)
 - [x] [Item 54: Treat undefined AsNo Value](Chapter%206%3A%20Library%20and%20API%20Design/Item%2054%3A%20Treat%20undefined%20AsNo%20Value.md)
-- [ ] [Item 55: Accept Options Objects for Keyword Arguments ](Chapter%206%3A%20Library%20and%20API%20Design/Item%2055%3A%20Accept%20Options%20Objects%20for%20Keyword%20Arguments%20.md)
-- [ ] [Item 56: Avoid Unnecessary State](Chapter%206%3A%20Library%20and%20API%20Design/Item%2056%3A%20Avoid%20Unnecessary%20State.md)
-- [ ] [Item 57: Use Structural Typing for Flexible Interfaces](Chapter%206%3A%20Library%20and%20API%20Design/Item%2057%3A%20Use%20Structural%20Typing%20for%20Flexible%20Interfaces.md)
-- [ ] [Item 58: Distinguish between Array and Array-Like](Chapter%206%3A%20Library%20and%20API%20Design/Item%2058%3A%20Distinguish%20between%20Array%20and%20Array-Like.md)
-- [ ] [Item 59: Avoid Excessive Coercion](Chapter%206%3A%20Library%20and%20API%20Design/Item%2059%3A%20Avoid%20Excessive%20Coercion.md)
+- [x] [Item 55: Accept Options Objects for Keyword Arguments ](Chapter%206%3A%20Library%20and%20API%20Design/Item%2055%3A%20Accept%20Options%20Objects%20for%20Keyword%20Arguments%20.md)
+- [x] [Item 56: Avoid Unnecessary State](Chapter%206%3A%20Library%20and%20API%20Design/Item%2056%3A%20Avoid%20Unnecessary%20State.md)
+- [x] [Item 57: Use Structural Typing for Flexible Interfaces](Chapter%206%3A%20Library%20and%20API%20Design/Item%2057%3A%20Use%20Structural%20Typing%20for%20Flexible%20Interfaces.md)
+- [x] [Item 58: Distinguish between Array and Array-Like](Chapter%206%3A%20Library%20and%20API%20Design/Item%2058%3A%20Distinguish%20between%20Array%20and%20Array-Like.md)
+- [x] [Item 59: Avoid Excessive Coercion](Chapter%206%3A%20Library%20and%20API%20Design/Item%2059%3A%20Avoid%20Excessive%20Coercion.md)
 
 ## Chapter 7: Concurrency
 
