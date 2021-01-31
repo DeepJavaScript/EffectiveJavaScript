@@ -151,3 +151,4 @@ function downloadFiles (url, file) {
 ## 現在的做法
 
 有 Promise 囉!!
+太多非同步，可以選擇使用 Promise.all, Promise.race, Promise.any
