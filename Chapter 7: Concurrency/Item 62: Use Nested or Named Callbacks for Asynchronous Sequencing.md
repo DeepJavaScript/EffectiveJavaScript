@@ -124,21 +124,21 @@ function downloadC (url, file, a, b) {
 
 // still more duplicated bindings
 function finish (url, file, a, b, c) {
-     // ...
+  // ...
 }
 ```
 
 折衷方案
 
 ```javascript
-db.lookupAsync("url", function (url) {
+db.lookupAsync("url", url => {
   downloadAsync(url, downloadFiles.bind(null, url));
 });
 
 function downloadFiles (url, file) {
-  downloadAsync("a.txt", function (url, file, a) {
-    downloadAsync("b.txt", function (url, file, a, b) {
-      downloadAsync("c.txt", function (url, file, a, b, c) {
+  downloadAsync("a.txt", (url, file, a) => {
+    downloadAsync("b.txt", (url, file, a, b) => {
+      downloadAsync("c.txt", (url, file, a, b, c) => {
         // ...
       });
     });

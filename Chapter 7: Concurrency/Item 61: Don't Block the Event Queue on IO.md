@@ -47,3 +47,7 @@ downloadAsync("http://example.com/file.txt", function(text) {
 });
 ```
 
+## 多執行緒的安排
+
+- 畫面執行緒 = 主執行緒，若執行 blocking 會造成 UX 不好
+- 繁重的運算，應該在背景執行緒執行，可以開 work 執行同步 API。
