@@ -96,12 +96,12 @@ deepJS 讀書會的其中一本書。
 
 ## Chapter 7: Concurrency
 
-- [ ] [Item 60: Support Method Chaining](Chapter%207%3A%20Concurrency/Item%2060%3A%20Support%20Method%20Chaining.md)
-- [ ] [Item 61: Don't Block the Event Queue on IO](Chapter%207%3A%20Concurrency/Item%2061%3A%20Don't%20Block%20the%20Event%20Queue%20on%20IO.md)
-- [ ] [Item 62: Use Nested or Named Callbacks for Asynchronous Sequencing](Chapter%207%3A%20Concurrency/Item%2062%3A%20Use%20Nested%20or%20Named%20Callbacks%20for%20Asynchronous%20Sequencing.md)
-- [ ] [Item 63: Be Aware of Dropped Errors](Chapter%207%3A%20Concurrency/Item%2063%3A%20Be%20Aware%20of%20Dropped%20Errors.md)
-- [ ] [Item 64: Use Recursion for Asynchronous Loops](Chapter%207%3A%20Concurrency/Item%2064%3A%20Use%20Recursion%20for%20Asynchronous%20Loops.md)
-- [ ] [Item 65: Don't Block the Event Queue on Computation](Chapter%207%3A%20Concurrency/Item%2065%3A%20Don't%20Block%20the%20Event%20Queue%20on%20Computation.md)
-- [ ] [Item 66: Use a Counter to Perform Concurrent Operations](Chapter%207%3A%20Concurrency/Item%2066%3A%20Use%20a%20Counter%20to%20Perform%20Concurrent%20Operations.md)
-- [ ] [Item 67: Never Call Asynchronous Callbacks Synchronously](Chapter%207%3A%20Concurrency/Item%2067%3A%20Never%20Call%20Asynchronous%20Callbacks%20Synchronously.md)
-- [ ] [Item 68: Use Promises for Cleaner Asynchronous Logic](Chapter%207%3A%20Concurrency/Item%2068%3A%20Use%20Promises%20for%20Cleaner%20Asynchronous%20Logic.md)
+- [x] [Item 60: Support Method Chaining](Chapter%207%3A%20Concurrency/Item%2060%3A%20Support%20Method%20Chaining.md)
+- [x] [Item 61: Don't Block the Event Queue on IO](Chapter%207%3A%20Concurrency/Item%2061%3A%20Don't%20Block%20the%20Event%20Queue%20on%20IO.md)
+- [x] [Item 62: Use Nested or Named Callbacks for Asynchronous Sequencing](Chapter%207%3A%20Concurrency/Item%2062%3A%20Use%20Nested%20or%20Named%20Callbacks%20for%20Asynchronous%20Sequencing.md)
+- [x] [Item 63: Be Aware of Dropped Errors](Chapter%207%3A%20Concurrency/Item%2063%3A%20Be%20Aware%20of%20Dropped%20Errors.md)
+- [x] [Item 64: Use Recursion for Asynchronous Loops](Chapter%207%3A%20Concurrency/Item%2064%3A%20Use%20Recursion%20for%20Asynchronous%20Loops.md)
+- [x] [Item 65: Don't Block the Event Queue on Computation](Chapter%207%3A%20Concurrency/Item%2065%3A%20Don't%20Block%20the%20Event%20Queue%20on%20Computation.md)
+- [x] [Item 66: Use a Counter to Perform Concurrent Operations](Chapter%207%3A%20Concurrency/Item%2066%3A%20Use%20a%20Counter%20to%20Perform%20Concurrent%20Operations.md)
+- [x] [Item 67: Never Call Asynchronous Callbacks Synchronously](Chapter%207%3A%20Concurrency/Item%2067%3A%20Never%20Call%20Asynchronous%20Callbacks%20Synchronously.md)
+- [x] [Item 68: Use Promises for Cleaner Asynchronous Logic](Chapter%207%3A%20Concurrency/Item%2068%3A%20Use%20Promises%20for%20Cleaner%20Asynchronous%20Logic.md)
