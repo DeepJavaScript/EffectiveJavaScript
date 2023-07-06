@@ -93,10 +93,10 @@ deepJS 讀書會的其中一本書。
 - [x] [Item 57: Use Structural Typing for Flexible Interfaces](Chapter%206%3A%20Library%20and%20API%20Design/Item%2057%3A%20Use%20Structural%20Typing%20for%20Flexible%20Interfaces.md)
 - [x] [Item 58: Distinguish between Array and Array-Like](Chapter%206%3A%20Library%20and%20API%20Design/Item%2058%3A%20Distinguish%20between%20Array%20and%20Array-Like.md)
 - [x] [Item 59: Avoid Excessive Coercion](Chapter%206%3A%20Library%20and%20API%20Design/Item%2059%3A%20Avoid%20Excessive%20Coercion.md)
+- [x] [Item 60: Support Method Chaining](Chapter%206%3A%20Library%20and%20API%20Design/Item%2060%3A%20Support%20Method%20Chaining.md)
 
 ## Chapter 7: Concurrency
 
-- [x] [Item 60: Support Method Chaining](Chapter%207%3A%20Concurrency/Item%2060%3A%20Support%20Method%20Chaining.md)
 - [x] [Item 61: Don't Block the Event Queue on IO](Chapter%207%3A%20Concurrency/Item%2061%3A%20Don't%20Block%20the%20Event%20Queue%20on%20IO.md)
 - [x] [Item 62: Use Nested or Named Callbacks for Asynchronous Sequencing](Chapter%207%3A%20Concurrency/Item%2062%3A%20Use%20Nested%20or%20Named%20Callbacks%20for%20Asynchronous%20Sequencing.md)
 - [x] [Item 63: Be Aware of Dropped Errors](Chapter%207%3A%20Concurrency/Item%2063%3A%20Be%20Aware%20of%20Dropped%20Errors.md)
